@@ -3,11 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HELIOS ERP | El ERP que se adapta a tu empresa</title>
+    <title>HELIOS ERP | Software empresarial a la medida</title>
     <meta
       name="description"
-      content="HELIOS es un ERP modular y adaptable para centralizar ventas, compras, inventario, recursos humanos, caja, obras, contabilidad, facturación y reportes."
+      content="HELIOS es un ERP modular que se adapta a tu operación para centralizar ventas, compras, inventario, caja, recursos humanos, obras, contabilidad, facturación y reportes."
     />
+    <meta property="og:title" content="HELIOS ERP | El ERP que se adapta a tu empresa" />
+    <meta
+      property="og:description"
+      content="Centraliza tu operación con un ERP modular, escalable y configurado alrededor de tus procesos reales."
+    />
+    <meta property="og:image" content="./assets/helios-erp-hero.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://samuelcruz0456-cmyk.github.io/helios-landing/" />
+    <link rel="canonical" href="https://samuelcruz0456-cmyk.github.io/helios-landing/" />
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -17,19 +26,26 @@
         <img src="./assets/helios-logo.png" alt="HELIOS" />
       </a>
 
-      <nav class="nav-links" aria-label="Principal">
-        <a href="#adaptable">Adaptable</a>
+      <nav class="nav-links" aria-label="Principal" data-nav>
+        <a href="#problema">Problema</a>
+        <a href="#adaptable">Solución</a>
         <a href="#modulos">Módulos</a>
-        <a href="#implementacion">Implementación</a>
+        <a href="#industrias">Industrias</a>
         <a href="#contacto">Demo</a>
       </nav>
 
-      <a class="nav-cta" href="#contacto">
+      <a class="nav-cta" href="#contacto" aria-label="Agendar demo">
         <i data-lucide="calendar-check"></i>
         <span>Agendar demo</span>
       </a>
 
-      <button class="menu-button" type="button" data-menu-button aria-label="Abrir menú">
+      <button
+        class="menu-button"
+        type="button"
+        data-menu-button
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
         <i data-lucide="menu"></i>
       </button>
     </header>
@@ -39,131 +55,146 @@
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
 
-        <div class="hero-content">
-          <p class="eyebrow">ERP adaptable para empresas reales</p>
-          <h1 id="hero-title">HELIOS ERP adaptable</h1>
+        <div class="hero-shell">
+          <p class="eyebrow">ERP adaptable para empresas en crecimiento</p>
+          <h1 id="hero-title">Control total para empresas que ya no pueden operar en caos.</h1>
           <p class="hero-lead">
-            Tu empresa no es genérica. Tu ERP tampoco debería serlo.
+            HELIOS ordena ventas, compras, inventario, caja, recursos humanos,
+            obras, contabilidad, facturación y reportes en una sola plataforma.
           </p>
           <p class="hero-copy">
-            HELIOS se configura alrededor de tus procesos reales para centralizar
-            ventas, compras, inventario, recursos humanos, caja, obras, contabilidad,
-            facturación y reportes en una sola plataforma.
+            No vendemos un paquete genérico. Diseñamos el ERP alrededor de tus
+            procesos reales para que tu empresa gane claridad sin cambiar su forma
+            de operar de un día para otro.
           </p>
 
           <div class="hero-actions">
-            <a class="button primary" href="#contacto">
-              <i data-lucide="sparkles"></i>
+            <a
+              class="button primary"
+              href="mailto:samuelgamas75@gmail.com?subject=Solicito%20una%20demostraci%C3%B3n%20de%20HELIOS"
+            >
+              <i data-lucide="send"></i>
               <span>Solicitar demostración</span>
             </a>
-            <a class="button secondary" href="#modulos">
-              <i data-lucide="layout-grid"></i>
-              <span>Ver módulos</span>
+            <a class="button secondary" href="#adaptable">
+              <i data-lucide="arrow-down-right"></i>
+              <span>Ver cómo funciona</span>
             </a>
           </div>
 
           <div class="hero-proof" aria-label="Ventajas principales">
-            <span>Implementación flexible</span>
-            <span>Módulos escalables</span>
-            <span>Control multiempresa</span>
+            <span>Sin paquetes rígidos</span>
+            <span>Implementación por etapas</span>
+            <span>Preparado para multiempresa</span>
           </div>
         </div>
       </section>
 
-      <section class="intro-band" aria-label="Resumen de propuesta">
-        <div class="intro-item">
-          <strong>Diseñado para tu operación</strong>
-          <span>No fuerza procesos. Los entiende, los ordena y los digitaliza.</span>
+      <section class="signal-strip" aria-label="Resumen comercial de HELIOS">
+        <div>
+          <strong>Una operación</strong>
+          <span>Datos, usuarios, permisos y reportes conectados.</span>
         </div>
-        <div class="intro-item">
-          <strong>Listo para crecer por etapas</strong>
-          <span>Empieza con los módulos clave y escala cuando tu empresa lo necesite.</span>
+        <div>
+          <strong>Un sistema</strong>
+          <span>Menos archivos sueltos, menos captura doble, menos fricción.</span>
         </div>
-        <div class="intro-item">
-          <strong>Información clara para dirigir</strong>
-          <span>Reportes, trazabilidad y control desde un solo lugar.</span>
+        <div>
+          <strong>Un ERP a la medida</strong>
+          <span>Configurado según el giro, áreas y ritmo de cada cliente.</span>
         </div>
       </section>
 
-      <section class="section problem-section" aria-labelledby="problem-title">
+      <section class="section problem-section" id="problema" aria-labelledby="problem-title">
         <div class="section-copy">
-          <p class="eyebrow">El problema</p>
-          <h2 id="problem-title">Cuando la operación crece, Excel ya no alcanza.</h2>
+          <p class="eyebrow">La señal de alerta</p>
+          <h2 id="problem-title">Cuando la empresa crece, el desorden también escala.</h2>
           <p>
-            Las empresas no pierden control de un día para otro. Lo pierden cuando
-            la información se reparte entre hojas, mensajes, archivos, capturas
-            repetidas y sistemas que no hablan entre sí.
+            Si cada área trabaja con sus propios archivos, chats y controles, la
+            dirección termina decidiendo con información incompleta. HELIOS convierte
+            esa operación dispersa en un sistema controlado.
           </p>
         </div>
 
-        <div class="problem-list">
-          <article>
-            <i data-lucide="files"></i>
-            <h3>Información dispersa</h3>
-            <p>Datos críticos repartidos entre áreas, formatos y personas clave.</p>
-          </article>
-          <article>
-            <i data-lucide="repeat-2"></i>
-            <h3>Captura doble</h3>
-            <p>Reprocesos que consumen tiempo y aumentan errores administrativos.</p>
-          </article>
-          <article>
-            <i data-lucide="circle-alert"></i>
-            <h3>Poca trazabilidad</h3>
-            <p>Compras, ventas, inventario y documentos difíciles de seguir.</p>
-          </article>
-          <article>
-            <i data-lucide="clock-3"></i>
-            <h3>Reportes tardíos</h3>
-            <p>Decisiones importantes tomadas con información incompleta o atrasada.</p>
-          </article>
+        <div class="compare-panel" aria-label="Comparación antes y después de HELIOS">
+          <div class="compare-column before">
+            <span>Hoy</span>
+            <strong>Operación fragmentada</strong>
+            <ul>
+              <li>Reportes que llegan tarde.</li>
+              <li>Inventario difícil de confiar.</li>
+              <li>Procesos que dependen de personas clave.</li>
+              <li>Captura repetida entre áreas.</li>
+            </ul>
+          </div>
+          <div class="compare-column after">
+            <span>Con HELIOS</span>
+            <strong>Control operativo</strong>
+            <ul>
+              <li>Información centralizada por módulo.</li>
+              <li>Trazabilidad por usuario, empresa y documento.</li>
+              <li>Permisos, flujos y reportes configurables.</li>
+              <li>Base lista para crecer con nuevas áreas.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="section adaptive-section" id="adaptable" aria-labelledby="adaptive-title">
-        <div class="adaptive-panel">
+      <section class="showcase-section" id="adaptable" aria-labelledby="adaptable-title">
+        <div class="showcase-copy">
           <p class="eyebrow">La diferencia HELIOS</p>
-          <h2 id="adaptive-title">Primero entendemos tu operación. Después configuramos tu ERP.</h2>
+          <h2 id="adaptable-title">Primero entendemos cómo trabajas. Después construimos el ERP.</h2>
           <p>
-            Muchos sistemas obligan a la empresa a adaptarse al software. HELIOS
-            parte de una idea distinta: entender cómo trabajas hoy, detectar los
-            puntos críticos y construir una plataforma que ordene tu operación sin
-            frenar el ritmo del negocio.
+            HELIOS no obliga al cliente a adaptarse a una plantilla. Analiza la
+            operación, define prioridades y activa los módulos que realmente generan
+            control desde el primer ciclo de implementación.
           </p>
-          <div class="adaptive-actions">
-            <a class="button primary dark" href="#contacto">
-              <i data-lucide="message-square-text"></i>
-              <span>Hablar con un asesor</span>
-            </a>
-          </div>
         </div>
 
-        <div class="adaptive-steps" aria-label="Proceso adaptable">
-          <div>
-            <span>01</span>
-            <strong>Mapeamos tus procesos reales</strong>
-            <p>Áreas, permisos, documentos, flujos, reportes y prioridades.</p>
+        <div class="command-center" aria-label="Panel conceptual de módulos HELIOS">
+          <div class="console-header">
+            <span></span>
+            <strong>HELIOS Command Center</strong>
+            <em>Operación en vivo</em>
           </div>
-          <div>
-            <span>02</span>
-            <strong>Activamos los módulos correctos</strong>
-            <p>Sin pagar complejidad innecesaria ni cargar herramientas que no usas.</p>
+          <div class="console-grid">
+            <div class="metric">
+              <span>Ventas</span>
+              <strong>Seguimiento</strong>
+              <i></i>
+            </div>
+            <div class="metric">
+              <span>Inventario</span>
+              <strong>Stock claro</strong>
+              <i></i>
+            </div>
+            <div class="metric">
+              <span>Compras</span>
+              <strong>Autorizaciones</strong>
+              <i></i>
+            </div>
+            <div class="metric">
+              <span>Contabilidad</span>
+              <strong>Flujo conectado</strong>
+              <i></i>
+            </div>
           </div>
-          <div>
-            <span>03</span>
-            <strong>Escalamos contigo</strong>
-            <p>Más usuarios, empresas, sucursales, módulos e integraciones cuando llegue el momento.</p>
+          <div class="console-flow">
+            <span>Diagnóstico</span>
+            <span>Configuración</span>
+            <span>Capacitación</span>
+            <span>Mejora continua</span>
           </div>
         </div>
       </section>
 
       <section class="section modules-section" id="modulos" aria-labelledby="modules-title">
         <div class="section-heading centered">
-          <p class="eyebrow">Una plataforma, muchas áreas conectadas</p>
-          <h2 id="modules-title">Módulos para controlar la operación completa.</h2>
+          <p class="eyebrow">Módulos conectados</p>
+          <h2 id="modules-title">Todo lo que necesitas para operar con claridad.</h2>
           <p>
-            HELIOS integra administración, operación, ventas y finanzas en un sistema
-            modular preparado para crecer con cada cliente.
+            La implementación se cotiza según el alcance real del cliente. Se activan
+            los módulos correctos, con permisos, flujos y reportes alineados a la operación.
           </p>
         </div>
 
@@ -171,27 +202,27 @@
           <article>
             <i data-lucide="users-round"></i>
             <h3>Recursos Humanos</h3>
-            <p>Empleados, expedientes digitales, documentos, vacaciones y movimientos.</p>
+            <p>Expedientes, documentos, vacaciones, movimientos y control por empleado.</p>
           </article>
           <article>
             <i data-lucide="shopping-bag"></i>
             <h3>Compras</h3>
-            <p>Órdenes, proveedores, autorizaciones, costos y trazabilidad.</p>
+            <p>Proveedores, órdenes, autorizaciones, costos y trazabilidad de documentos.</p>
           </article>
           <article>
             <i data-lucide="receipt-text"></i>
             <h3>Ventas</h3>
-            <p>Clientes, cotizaciones, órdenes, seguimiento comercial y facturación.</p>
+            <p>Clientes, cotizaciones, seguimiento comercial, pedidos y facturación.</p>
           </article>
           <article>
             <i data-lucide="scan-barcode"></i>
             <h3>Punto de venta</h3>
-            <p>Caja, tickets, sesiones, métodos de pago y reportes diarios.</p>
+            <p>Caja, tickets, sesiones, métodos de pago, cortes y reportes diarios.</p>
           </article>
           <article>
             <i data-lucide="boxes"></i>
             <h3>Inventario</h3>
-            <p>Productos, stock, movimientos, alertas y control de almacén.</p>
+            <p>Productos, stock, movimientos, almacenes, alertas y control operativo.</p>
           </article>
           <article>
             <i data-lucide="hard-hat"></i>
@@ -206,134 +237,132 @@
           <article>
             <i data-lucide="file-check-2"></i>
             <h3>Facturación</h3>
-            <p>Flujo preparado para facturas, clientes fiscales y control documental.</p>
+            <p>Clientes fiscales, documentos, seguimiento de emisión y control administrativo.</p>
           </article>
           <article>
             <i data-lucide="chart-no-axes-combined"></i>
             <h3>Reportes</h3>
-            <p>Indicadores claros para dirección, administración y operación.</p>
+            <p>Indicadores para dirección, administración y equipos operativos.</p>
           </article>
         </div>
       </section>
 
-      <section class="section value-section" aria-labelledby="value-title">
-        <div class="section-heading">
-          <p class="eyebrow">Ventajas de integrar HELIOS</p>
-          <h2 id="value-title">Más control, menos fricción, mejores decisiones.</h2>
-        </div>
-
-        <div class="value-grid">
-          <div>
-            <i data-lucide="workflow"></i>
-            <strong>Procesos conectados</strong>
-            <span>Las áreas dejan de trabajar como islas.</span>
-          </div>
-          <div>
-            <i data-lucide="shield-check"></i>
-            <strong>Roles y permisos</strong>
-            <span>Control por usuario, empresa, módulo y responsabilidad.</span>
-          </div>
-          <div>
-            <i data-lucide="building-2"></i>
-            <strong>Multiempresa</strong>
-            <span>Una plataforma preparada para operar distintas razones sociales.</span>
-          </div>
-          <div>
-            <i data-lucide="trending-up"></i>
-            <strong>Escalable</strong>
-            <span>Crece por etapas sin rehacer todo desde cero.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section industries-section" id="industrias" aria-labelledby="industries-title">
-        <div class="section-heading centered">
+      <section class="industry-section" id="industrias" aria-labelledby="industries-title">
+        <div class="industry-copy">
           <p class="eyebrow">Casos de uso por industria</p>
-          <h2 id="industries-title">HELIOS se adapta al giro, no lo encierra en una plantilla.</h2>
+          <h2 id="industries-title">HELIOS habla el idioma de tu operación.</h2>
           <p>
-            Cada empresa opera distinto. Por eso HELIOS se implementa entendiendo
-            primero el flujo real de trabajo, las áreas críticas y la información
-            que dirección necesita controlar.
+            Cada giro necesita controles distintos. Por eso el sistema se estructura
+            con módulos, permisos y reportes pensados para el día a día de cada cliente.
           </p>
         </div>
 
-        <div class="industry-grid">
-          <article>
+        <div class="industry-tabs" role="tablist" aria-label="Industrias">
+          <button type="button" class="is-active" data-industry="constructoras" role="tab" aria-selected="true">
+            Constructoras
+          </button>
+          <button type="button" data-industry="comercializadoras" role="tab" aria-selected="false">
+            Comercializadoras
+          </button>
+          <button type="button" data-industry="retail" role="tab" aria-selected="false">
+            Retail
+          </button>
+          <button type="button" data-industry="servicios" role="tab" aria-selected="false">
+            Servicios
+          </button>
+        </div>
+
+        <div class="industry-stage">
+          <article class="industry-card is-active" data-industry-panel="constructoras">
             <i data-lucide="hard-hat"></i>
-            <h3>Constructoras</h3>
-            <p>Obras, estimaciones, compras por proyecto, maquinaria, subcontratistas, bitácoras y avance operativo.</p>
+            <h3>Control por obra desde compras hasta estimaciones.</h3>
+            <p>
+              HELIOS ayuda a conectar obras, presupuestos, avances, maquinaria,
+              subcontratistas, compras por proyecto y reportes para dirección.
+            </p>
+            <ul>
+              <li>Estimaciones y avance operativo.</li>
+              <li>Compras vinculadas a obra.</li>
+              <li>Visibilidad de costos y responsables.</li>
+            </ul>
           </article>
-          <article>
+          <article class="industry-card" data-industry-panel="comercializadoras">
             <i data-lucide="warehouse"></i>
-            <h3>Comercializadoras</h3>
-            <p>Inventario, ventas, compras, clientes, proveedores, márgenes, facturación y reportes comerciales.</p>
+            <h3>Inventario, ventas y compras conectadas.</h3>
+            <p>
+              Centraliza proveedores, clientes, productos, órdenes, facturación,
+              márgenes y reportes comerciales en una sola operación.
+            </p>
+            <ul>
+              <li>Stock confiable por almacén.</li>
+              <li>Seguimiento comercial y administrativo.</li>
+              <li>Reportes para compras y dirección.</li>
+            </ul>
           </article>
-          <article>
+          <article class="industry-card" data-industry-panel="retail">
             <i data-lucide="store"></i>
-            <h3>Retail y punto de venta</h3>
-            <p>Caja, tickets, sesiones, cortes diarios, métodos de pago, stock y control por sucursal.</p>
+            <h3>Caja, cortes y sucursales bajo control.</h3>
+            <p>
+              Diseñado para operaciones con punto de venta, tickets, sesiones de
+              caja, métodos de pago, inventario y reportes diarios.
+            </p>
+            <ul>
+              <li>Cortes de caja y trazabilidad.</li>
+              <li>Control por sucursal y usuario.</li>
+              <li>Inventario actualizado por operación.</li>
+            </ul>
           </article>
-          <article>
+          <article class="industry-card" data-industry-panel="servicios">
             <i data-lucide="briefcase-business"></i>
-            <h3>Empresas de servicios</h3>
-            <p>Clientes, órdenes, seguimiento operativo, cobranza, documentos, usuarios y reportes por área.</p>
+            <h3>Órdenes, clientes y seguimiento sin perder contexto.</h3>
+            <p>
+              HELIOS organiza clientes, actividades, documentos, responsables,
+              cobranza y reportes de desempeño por área.
+            </p>
+            <ul>
+              <li>Órdenes y seguimiento operativo.</li>
+              <li>Documentos centralizados.</li>
+              <li>Indicadores por equipo o cliente.</li>
+            </ul>
           </article>
-          <article>
-            <i data-lucide="folder-lock"></i>
-            <h3>Administración interna</h3>
-            <p>Expedientes, roles, permisos, trazabilidad documental, recursos humanos y control multiusuario.</p>
-          </article>
-          <article>
-            <i data-lucide="network"></i>
-            <h3>Grupos multiempresa</h3>
-            <p>Varias razones sociales, operación centralizada, permisos por empresa y visibilidad ejecutiva.</p>
-          </article>
-        </div>
-
-        <div class="industry-note">
-          <i data-lucide="radar"></i>
-          <p>
-            HELIOS no empieza preguntando qué paquete quieres. Empieza entendiendo
-            cómo opera tu empresa para construir una solución alrededor de tus procesos.
-          </p>
         </div>
       </section>
 
       <section class="section implementation-section" id="implementacion" aria-labelledby="implementation-title">
         <div class="section-heading centered">
-          <p class="eyebrow">Implementación</p>
-          <h2 id="implementation-title">Un ERP construido con método, no con improvisación.</h2>
+          <p class="eyebrow">Implementación con método</p>
+          <h2 id="implementation-title">Un ERP que se construye con diagnóstico, no con suposiciones.</h2>
           <p>
-            Cada proyecto inicia con entendimiento. Después configuramos, migramos,
-            capacitamos y acompañamos la adopción del sistema.
+            El proceso está pensado para avanzar por etapas, reducir fricción y
+            lograr que cada área use el sistema con claridad.
           </p>
         </div>
 
         <ol class="timeline">
           <li>
             <span>01</span>
-            <strong>Diagnóstico</strong>
-            <p>Levantamos procesos, áreas, documentos y necesidades prioritarias.</p>
+            <strong>Diagnóstico operativo</strong>
+            <p>Mapeo de áreas, documentos, usuarios, permisos, flujos y prioridades.</p>
           </li>
           <li>
             <span>02</span>
-            <strong>Configuración</strong>
-            <p>Activamos módulos, usuarios, permisos, flujos y catálogos iniciales.</p>
+            <strong>Diseño del alcance</strong>
+            <p>Definición de módulos, reportes, reglas de operación y etapas de salida.</p>
           </li>
           <li>
             <span>03</span>
-            <strong>Migración</strong>
-            <p>Preparamos la información base para iniciar con estructura ordenada.</p>
+            <strong>Configuración</strong>
+            <p>Alta de catálogos, usuarios, permisos, empresas y flujos principales.</p>
           </li>
           <li>
             <span>04</span>
             <strong>Capacitación</strong>
-            <p>Entrenamos a los equipos por rol y flujo de trabajo.</p>
+            <p>Entrenamiento por rol para que cada equipo use lo que necesita.</p>
           </li>
           <li>
             <span>05</span>
             <strong>Acompañamiento</strong>
-            <p>Ajustamos, medimos y mejoramos conforme la operación usa HELIOS.</p>
+            <p>Ajustes, mejora continua y expansión de módulos conforme crece la operación.</p>
           </li>
         </ol>
       </section>
@@ -341,20 +370,23 @@
       <section class="final-cta" id="contacto" aria-labelledby="cta-title">
         <div>
           <p class="eyebrow">Siguiente paso</p>
-          <h2 id="cta-title">Construyamos el ERP que tu empresa realmente necesita.</h2>
+          <h2 id="cta-title">Muéstranos tu operación. Te mostramos cómo ordenarla.</h2>
           <p>
-            Agenda una demostración y descubre cómo HELIOS puede convertir tu
-            operación diaria en control, claridad y crecimiento.
+            Solicita una demostración y recibe una propuesta adaptada a tu empresa,
+            giro, módulos y prioridades reales.
           </p>
         </div>
         <div class="cta-actions">
-          <a class="button primary dark" href="mailto:samuelgamas75@gmail.com?subject=Solicito%20una%20demostraci%C3%B3n%20de%20HELIOS">
+          <a
+            class="button primary dark"
+            href="mailto:samuelgamas75@gmail.com?subject=Solicito%20una%20demostraci%C3%B3n%20de%20HELIOS"
+          >
             <i data-lucide="send"></i>
             <span>Solicitar demostración</span>
           </a>
-          <a class="button secondary light" href="mailto:samuelgamas75@gmail.com?subject=Quiero%20cotizar%20HELIOS%20ERP">
-            <i data-lucide="mail"></i>
-            <span>Cotizar por correo</span>
+          <a class="button secondary light" href="./pdf/HELIOS_Brochure_Comercial.pdf">
+            <i data-lucide="file-down"></i>
+            <span>Ver brochure</span>
           </a>
         </div>
       </section>
@@ -363,6 +395,7 @@
     <footer class="site-footer">
       <img src="./assets/helios-logo.png" alt="HELIOS" />
       <span>ERP adaptable para empresas que quieren operar con claridad.</span>
+      <a href="mailto:samuelgamas75@gmail.com">samuelgamas75@gmail.com</a>
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>

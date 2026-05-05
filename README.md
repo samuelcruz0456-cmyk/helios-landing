@@ -18,8 +18,8 @@ Archivos principales:
 - `styles.css`
 - `script.js`
 - `assets/`
+- `pdf/`
 
 ## Contacto
 
 samuelgamas75@gmail.com
-
