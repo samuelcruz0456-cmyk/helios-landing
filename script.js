@@ -1,10 +1,12 @@
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu-button]");
+const floatingCta = document.querySelector("[data-floating-cta]");
 const industryTabs = document.querySelectorAll("[data-industry]");
 const industryPanels = document.querySelectorAll("[data-industry-panel]");
 
 function updateHeaderState() {
   header?.classList.toggle("is-scrolled", window.scrollY > 18);
+  floatingCta?.classList.toggle("is-visible", window.scrollY > 520);
 }
 
 function closeMenu() {
