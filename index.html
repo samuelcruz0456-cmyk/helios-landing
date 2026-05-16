@@ -1,520 +1,2825 @@
 <!doctype html>
 <html lang="es-MX">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HELIOS ERP | Centraliza tu operación en un solo lugar</title>
-    <meta
-      name="description"
-      content="HELIOS es un ERP adaptable para empresas en crecimiento que centraliza ventas, compras, inventario, caja, obras, contabilidad, facturación y reportes en un solo lugar."
-    />
-    <meta property="og:title" content="HELIOS ERP | Tu operación completa en un solo lugar" />
-    <meta
-      property="og:description"
-      content="HELIOS centraliza áreas, documentos, permisos y reportes para que dirección tenga control sin depender de archivos sueltos."
-    />
-    <meta property="og:image" content="./assets/helios-erp-hero.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://samuelcruz0456-cmyk.github.io/helios-landing/" />
-    <link rel="canonical" href="https://samuelcruz0456-cmyk.github.io/helios-landing/" />
-    <link rel="preconnect" href="https://unpkg.com" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#inicio" aria-label="HELIOS ERP">
-        <img src="./assets/helios-logo.png" alt="HELIOS" />
-      </a>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HELIOS ERP — Centraliza tu operación. Recupera el control.</title>
+<meta name="description" content="ERP adaptable para PyMEs en crecimiento. Centraliza ventas, compras, inventario, facturación y reportes en un solo lugar. Diagnóstico inicial sin costo." />
 
-      <nav class="nav-links" aria-label="Principal" data-nav>
-        <a href="#sintomas">Síntomas</a>
-        <a href="#direccion">Dirección</a>
-        <a href="#modulos">Módulos</a>
-        <a href="#industrias">Industrias</a>
-        <a href="#contacto">Demo</a>
-      </nav>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" />
 
-      <a
-        class="nav-cta"
-        href="mailto:samuelgamas75@gmail.com?subject=Solicito%20diagn%C3%B3stico%20inicial%20de%20HELIOS&body=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20inicial%20sin%20costo%20para%20evaluar%20c%C3%B3mo%20HELIOS%20puede%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa.%0A%0ANombre%3A%0AEmpresa%3A%0AGiro%3A%0ATel%C3%A9fono%3A%0A"
-        aria-label="Solicitar diagnóstico sin costo"
-      >
-        <i data-lucide="calendar-check"></i>
-        <span>Diagnóstico sin costo</span>
-      </a>
+<style>
+/* ============ TOKENS ============ */
+:root {
+  --ink: #0e1411;
+  --ink-soft: #2a3531;
+  --muted: #5d6864;
+  --muted-2: #8a948f;
+  --line: #e2eae5;
+  --line-soft: #eef3ef;
+  --paper: #f7f8f5;
+  --paper-2: #fbfcfa;
+  --white: #ffffff;
 
-      <button
-        class="menu-button"
-        type="button"
-        data-menu-button
-        aria-label="Abrir menú"
-        aria-expanded="false"
-      >
-        <i data-lucide="menu"></i>
+  --charcoal: #0e1411;
+  --charcoal-2: #18211d;
+
+  --emerald: #0d8a66;
+  --emerald-dark: #084a38;
+  --emerald-deep: #053126;
+  --emerald-tint: #e8f4ef;
+  --emerald-tint-2: #f1f8f4;
+
+  --amber: #c18a2c;
+  --amber-soft: #f3ddae;
+  --amber-tint: #fbf3df;
+
+  --steel: #2a4f5c;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --radius-lg: 22px;
+  --max: 1220px;
+  --shadow-sm: 0 1px 2px rgba(14, 20, 17, .04), 0 6px 16px rgba(14, 20, 17, .06);
+  --shadow-md: 0 8px 24px rgba(14, 20, 17, .08), 0 20px 50px rgba(14, 20, 17, .08);
+  --shadow-lg: 0 30px 80px rgba(14, 20, 17, .18);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* ============ TYPO ============ */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px 12px 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--emerald-dark);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--emerald);
+}
+.eyebrow.on-dark {
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: var(--amber-soft);
+}
+.eyebrow.on-dark::before { background: var(--amber); }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(40px, 5.6vw, 78px);
+  line-height: 0.98;
+  font-weight: 500;
+}
+h1 .serif {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.015em;
+  color: var(--emerald-dark);
+}
+h2 {
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.02;
+  font-weight: 500;
+}
+h2 .serif {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+p { margin: 0; color: var(--ink-soft); }
+.lead {
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 620px;
+}
+.muted { color: var(--muted); }
+
+/* ============ BUTTONS ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn.primary {
+  background: var(--charcoal);
+  color: var(--white);
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 8px 20px rgba(14,20,17,.18);
+}
+.btn.primary:hover { background: #1c2823; transform: translateY(-1px); }
+.btn.emerald {
+  background: var(--emerald);
+  color: var(--white);
+  box-shadow: 0 1px 0 rgba(255,255,255,.16) inset, 0 12px 28px rgba(13,138,102,.32);
+}
+.btn.emerald:hover { background: var(--emerald-dark); transform: translateY(-1px); }
+.btn.ghost {
+  background: var(--white);
+  border-color: var(--line);
+  color: var(--ink);
+}
+.btn.ghost:hover { border-color: var(--emerald); color: var(--emerald-dark); }
+.btn.light {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+  color: var(--white);
+}
+.btn.light:hover { background: rgba(255,255,255,.14); }
+.btn .ic { width: 16px; height: 16px; stroke-width: 2; }
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  z-index: 50;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100% - 32px, var(--max));
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 10px 10px 22px;
+  border: 1px solid rgba(226, 234, 229, .8);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: 0 8px 28px rgba(14, 20, 17, .06);
+  transition: all .2s ease;
+}
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 36px rgba(14, 20, 17, .10);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 17px;
+}
+.nav-brand img { width: 22px; height: 22px; object-fit: contain; }
+.nav-brand .dot { color: var(--emerald); }
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background .15s ease, color .15s ease;
+}
+.nav-links a:hover { background: var(--line-soft); color: var(--ink); }
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-cta .btn { height: 40px; padding: 0 16px; font-size: 14px; }
+
+@media (max-width: 880px) {
+  .nav { padding: 8px 8px 8px 18px; gap: 8px; }
+  .nav-links { display: none; }
+  .nav-cta .btn.ghost { display: none; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  padding: 132px 24px 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(80% 60% at 90% 10%, rgba(13,138,102,.10), transparent 60%),
+    radial-gradient(70% 50% at 0% 100%, rgba(193,138,44,.08), transparent 60%),
+    var(--paper);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(14,20,17,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,20,17,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 80%);
+  pointer-events: none;
+}
+
+.hero-shell {
+  position: relative;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+.hero-copy { min-width: 0; }
+.hero-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hero-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 500;
+}
+.hero-bullets li .ic {
+  width: 16px; height: 16px;
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0 18px;
+}
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero-trust .avatars {
+  display: flex;
+}
+.hero-trust .avatars span {
+  width: 26px; height: 26px;
+  border-radius: 999px;
+  border: 2px solid var(--paper);
+  background: var(--emerald-tint);
+  margin-right: -8px;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--emerald-dark);
+}
+.hero-trust .avatars span:nth-child(2) { background: var(--amber-tint); color: #7a5a18; }
+.hero-trust .avatars span:nth-child(3) { background: #e5edf0; color: var(--steel); }
+.hero-trust .avatars span:nth-child(4) { background: var(--charcoal); color: var(--white); }
+
+/* ============ HERO DASHBOARD PREVIEW ============ */
+.hero-preview {
+  position: relative;
+  min-width: 0;
+}
+.app-window {
+  position: relative;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md), 0 60px 120px rgba(14,20,17,.18);
+  overflow: hidden;
+  transform: perspective(1600px) rotateY(-3deg) rotateX(2deg);
+}
+.app-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.app-bar .dots {
+  display: flex; gap: 6px;
+}
+.app-bar .dots i {
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: #f1c6c6;
+}
+.app-bar .dots i:nth-child(2) { background: #f1dfa9; }
+.app-bar .dots i:nth-child(3) { background: #b9e6cc; }
+.app-bar .url {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  width: max-content;
+  margin: 0 auto;
+}
+.app-bar .url .lock {
+  width: 10px; height: 10px;
+  background: var(--emerald);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.app-body {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+}
+.app-side {
+  background: var(--charcoal);
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.app-side .side-logo {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+  display: grid; place-items: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -.02em;
+  margin: 0 auto 6px;
+}
+.app-side .side-ic {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: grid; place-items: center;
+  margin: 0 auto;
+  color: rgba(255,255,255,.45);
+  font-size: 0;
+}
+.app-side .side-ic .ic { width: 16px; height: 16px; color: inherit; }
+.app-side .side-ic.active { background: rgba(255,255,255,.08); color: var(--white); }
+
+.app-main {
+  padding: 18px 18px 22px;
+  background: var(--paper-2);
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.app-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.app-title em {
+  font-style: normal;
+  color: var(--muted);
+  font-weight: 400;
+}
+.app-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  font-size: 11px;
+  font-weight: 500;
+}
+.app-pill::before {
+  content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--emerald);
+}
+
+.app-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.app-kpi {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.app-kpi .k-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.app-kpi .k-value {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  margin-top: 2px;
+}
+.app-kpi .k-delta {
+  font-size: 10px;
+  color: var(--emerald);
+  margin-top: 2px;
+}
+.app-kpi .k-delta.neg { color: #b15050; }
+
+.app-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
+}
+.app-table .row {
+  display: grid;
+  grid-template-columns: 1fr 80px 70px 60px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 11px;
+}
+.app-table .row.head {
+  background: var(--paper-2);
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.app-table .row:last-child { border-bottom: 0; }
+.app-table .row .cell-main {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 500;
+}
+.app-table .row .cell-main i {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: var(--emerald-tint);
+  display: inline-grid; place-items: center;
+  font-size: 9px; font-weight: 700;
+  color: var(--emerald-dark);
+  flex-shrink: 0;
+}
+.app-table .row .cell-main i.amber { background: var(--amber-tint); color: #7a5a18; }
+.app-table .row .cell-main i.steel { background: #e5edf0; color: var(--steel); }
+.app-table .status {
+  display: inline-flex;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.app-table .status.warn { background: var(--amber-tint); color: #7a5a18; }
+.app-table .status.muted { background: var(--line-soft); color: var(--muted); }
+.app-table .num { font-variant-numeric: tabular-nums; color: var(--ink-soft); font-weight: 500; }
+.app-table .arrow {
+  width: 18px; height: 18px;
+  border-radius: 6px;
+  background: var(--paper-2);
+  display: inline-grid; place-items: center;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.preview-float {
+  position: absolute;
+  z-index: 2;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.preview-float.alert {
+  bottom: -22px;
+  left: -28px;
+  width: 280px;
+}
+.preview-float.note {
+  top: 22px;
+  right: -28px;
+  width: 240px;
+  padding: 12px;
+}
+.preview-float .icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.preview-float .icon.amber { background: var(--amber-tint); color: #7a5a18; }
+.preview-float .icon .ic { width: 18px; height: 18px; }
+.preview-float strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+.preview-float small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  .hero-shell { grid-template-columns: 1fr; }
+  .hero-preview { display: none; }
+}
+
+/* ============ TRUST STRIP ============ */
+.trust {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  padding: 40px 0 24px;
+  text-align: center;
+}
+.trust-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.trust-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin-top: 22px;
+  align-items: center;
+}
+.trust-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  color: var(--muted-2);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  font-size: 15px;
+  opacity: .72;
+  transition: opacity .2s ease;
+}
+.trust-logo:hover { opacity: 1; }
+.trust-logo .lg {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -.01em;
+}
+.trust-logo .sq {
+  display: inline-block;
+  width: 14px; height: 14px;
+  margin-right: 6px;
+  background: currentColor;
+  border-radius: 3px;
+}
+.trust-logo .circ {
+  display: inline-block;
+  width: 12px; height: 12px;
+  margin-right: 6px;
+  background: currentColor;
+  border-radius: 999px;
+}
+.trust-logo .tri {
+  display: inline-block;
+  width: 0; height: 0;
+  margin-right: 6px;
+  border-style: solid;
+  border-width: 0 7px 12px 7px;
+  border-color: transparent transparent currentColor transparent;
+}
+@media (max-width: 880px) {
+  .trust-logos { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============ STATS ============ */
+.stats {
+  width: min(100% - 32px, var(--max));
+  margin: 24px auto 0;
+  padding: 36px 36px;
+  border-radius: var(--radius);
+  background: var(--charcoal);
+  background-image:
+    radial-gradient(70% 80% at 0% 0%, rgba(13,138,102,.25), transparent 60%),
+    radial-gradient(60% 70% at 100% 100%, rgba(193,138,44,.16), transparent 60%);
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 1.2fr repeat(4, 1fr);
+  gap: 24px;
+  align-items: end;
+}
+.stats-intro h3 {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+.stats-intro h3 .serif {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400; font-style: italic;
+  color: var(--amber-soft);
+}
+.stats-intro p {
+  margin-top: 8px;
+  color: rgba(255,255,255,.6);
+  font-size: 13px;
+}
+.stat {
+  border-left: 1px solid rgba(255,255,255,.16);
+  padding-left: 22px;
+}
+.stat .num {
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  line-height: 1;
+}
+.stat .num .unit {
+  font-size: 22px;
+  color: var(--amber-soft);
+  margin-left: 2px;
+}
+.stat .label {
+  margin-top: 8px;
+  color: rgba(255,255,255,.66);
+  font-size: 12px;
+  line-height: 1.35;
+}
+@media (max-width: 980px) {
+  .stats { grid-template-columns: repeat(2, 1fr); padding: 28px; }
+  .stats-intro { grid-column: 1 / -1; }
+  .stat { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.16); padding-top: 16px; }
+}
+
+/* ============ SECTION SHELL ============ */
+.section {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+.section.tight { padding: 72px 0; }
+.section-head {
+  max-width: 720px;
+  margin-bottom: 56px;
+}
+.section-head.centered {
+  text-align: center;
+  margin-left: auto; margin-right: auto;
+}
+
+/* ============ DIRECCION (dark) ============ */
+.direccion-wrap {
+  background:
+    radial-gradient(60% 70% at 100% 0%, rgba(13,138,102,.22), transparent 60%),
+    radial-gradient(50% 60% at 0% 100%, rgba(193,138,44,.10), transparent 60%),
+    var(--charcoal);
+  color: var(--white);
+  padding: 100px 0;
+}
+.direccion {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+.direccion h2 { color: var(--white); }
+.direccion h2 .serif { color: var(--amber-soft); }
+.direccion p { color: rgba(255,255,255,.72); }
+.direccion .actions { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+.direccion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.direccion-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.04);
+  transition: background .2s ease, border-color .2s ease;
+}
+.direccion-card:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.22); }
+.direccion-card .num {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--amber-soft);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.direccion-card strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+.direccion-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.45;
+}
+@media (max-width: 980px) {
+  .direccion { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ============ COMPARISON ============ */
+.compare {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.compare-col {
+  position: relative;
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.compare-col.before {
+  background: var(--paper);
+}
+.compare-col.after {
+  background: linear-gradient(180deg, var(--emerald-tint-2) 0%, var(--white) 100%);
+  border-color: rgba(13,138,102,.24);
+}
+.compare-col .tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.compare-col.after .tag {
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: var(--white);
+}
+.compare-col h3 {
+  margin-top: 18px;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+.compare-col .meta {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.compare-col ul {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.compare-col li {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.compare-col li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border-radius: 999px;
+  background: var(--line-soft);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23b15050' stroke-width='3' stroke-linecap='round'><path d='M18 6L6 18M6 6l12 12'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 1px;
+}
+.compare-col.after li::before {
+  background: var(--emerald-tint);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230d8a66' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6L9 17l-5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 880px) { .compare { grid-template-columns: 1fr; } }
+
+/* ============ DEMO / PRODUCT TOUR ============ */
+.demo-wrap {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--white) 100%);
+  padding: 96px 0 120px;
+  border-top: 1px solid var(--line-soft);
+}
+.demo {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+}
+.demo-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  margin-top: 28px;
+}
+.demo-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all .15s ease;
+}
+.demo-tabs button:hover { color: var(--ink); }
+.demo-tabs button.active {
+  background: var(--charcoal);
+  color: var(--white);
+}
+.demo-tabs button .ic { width: 14px; height: 14px; }
+
+.demo-stage {
+  position: relative;
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(80% 60% at 0% 0%, rgba(13,138,102,.10), transparent 60%),
+    radial-gradient(60% 60% at 100% 100%, rgba(193,138,44,.10), transparent 60%),
+    var(--emerald-tint-2);
+  border: 1px solid var(--line);
+}
+.demo-stage .stage-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 28px;
+  align-items: center;
+}
+.demo-window {
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  min-height: 480px;
+}
+.demo-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.demo-aside .step {
+  position: relative;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.demo-aside .step.active {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 4px rgba(13,138,102,.14);
+}
+.demo-aside .step .step-num {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  color: var(--emerald);
+  font-size: 14px;
+  letter-spacing: -.01em;
+}
+.demo-aside .step strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+.demo-aside .step p {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+@media (max-width: 1060px) {
+  .demo-stage .stage-grid { grid-template-columns: 1fr; }
+}
+
+/* Demo content panels */
+.demo-panel { display: none; }
+.demo-panel.active { display: block; }
+
+.win-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.win-bar .dots { display: flex; gap: 6px; }
+.win-bar .dots i { width: 11px; height: 11px; border-radius: 999px; background: #f1c6c6; }
+.win-bar .dots i:nth-child(2) { background: #f1dfa9; }
+.win-bar .dots i:nth-child(3) { background: #b9e6cc; }
+.win-bar .breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--muted);
+}
+.win-bar .breadcrumb b { color: var(--ink); font-weight: 500; }
+.win-bar .user {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--ink-soft);
+}
+.win-bar .user .avatar {
+  width: 24px; height: 24px;
+  border-radius: 999px;
+  background: var(--emerald-dark);
+  color: var(--white);
+  display: grid; place-items: center;
+  font-size: 10px; font-weight: 600;
+}
+
+.win-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 420px;
+}
+.win-side {
+  background: var(--paper-2);
+  border-right: 1px solid var(--line);
+  padding: 16px 10px;
+}
+.win-side .side-section {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  padding: 12px 10px 6px;
+}
+.win-side .side-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.win-side .side-item:hover { background: var(--white); }
+.win-side .side-item.active {
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+.win-side .side-item .ic { width: 16px; height: 16px; color: var(--muted); }
+.win-side .side-item.active .ic { color: var(--emerald); }
+.win-side .side-item .count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--line-soft);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.win-content { padding: 22px 24px; background: var(--white); }
+.win-h {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px;
+}
+.win-h .ttl {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.win-h .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.win-h .right { display: flex; gap: 8px; }
+.win-h .right button {
+  height: 34px; padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-soft);
+  font-size: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.win-h .right button.primary {
+  background: var(--charcoal); color: var(--white); border-color: var(--charcoal);
+}
+.win-h .right button .ic { width: 13px; height: 13px; }
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.kpi-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.kpi-card .k-l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.kpi-card .k-v { font-size: 22px; font-weight: 600; letter-spacing: -.02em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.kpi-card .k-d { font-size: 11px; color: var(--emerald); margin-top: 4px; display: inline-flex; align-items: center; gap: 3px; }
+.kpi-card .k-d.neg { color: #b15050; }
+
+/* Chart */
+.chart {
+  height: 140px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  position: relative;
+  background: linear-gradient(180deg, var(--emerald-tint-2) 0%, var(--white) 100%);
+}
+.chart svg { width: 100%; height: 100%; }
+
+/* Table inside demo */
+.demo-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+  margin-top: 16px;
+}
+.demo-table .t-head, .demo-table .t-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 90px 80px;
+  gap: 10px;
+  padding: 12px 16px;
+  align-items: center;
+  font-size: 12px;
+}
+.demo-table .t-head {
+  background: var(--paper-2);
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+.demo-table .t-row {
+  border-top: 1px solid var(--line-soft);
+}
+.demo-table .t-row .main-cell {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 500;
+}
+.demo-table .t-row .main-cell .av {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  display: grid; place-items: center;
+  font-size: 10px; font-weight: 700;
+  flex-shrink: 0;
+}
+.demo-table .t-row .main-cell .av.amber { background: var(--amber-tint); color: #7a5a18; }
+.demo-table .t-row .main-cell .av.steel { background: #e5edf0; color: var(--steel); }
+.demo-table .t-row .main-cell .av.charcoal { background: var(--charcoal); color: var(--white); }
+.demo-table .t-row .num-cell { font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.demo-table .t-row .status-cell .s {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.demo-table .t-row .status-cell .s.warn { background: var(--amber-tint); color: #7a5a18; }
+.demo-table .t-row .status-cell .s.danger { background: #fce5e5; color: #944141; }
+.demo-table .t-row .status-cell .s.muted { background: var(--line-soft); color: var(--muted); }
+.demo-table .t-row .more {
+  text-align: right; color: var(--muted); font-size: 14px;
+}
+
+/* Inventory module: stock cards */
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 4px;
+}
+.stock-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.stock-card .sku { font-size: 11px; color: var(--muted); }
+.stock-card .name { font-size: 14px; font-weight: 600; margin-top: 4px; letter-spacing: -.01em; }
+.stock-card .bar {
+  height: 6px; border-radius: 999px;
+  background: var(--line-soft);
+  margin-top: 14px;
+  overflow: hidden;
+}
+.stock-card .bar i {
+  display: block; height: 100%;
+  background: var(--emerald);
+  border-radius: inherit;
+}
+.stock-card.warn .bar i { background: var(--amber); }
+.stock-card.low .bar i { background: #c95151; }
+.stock-card .meta {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex; justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+.stock-card .meta b { color: var(--ink); font-weight: 600; }
+
+/* Reportes: dual chart */
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+.report-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.report-card .h {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.report-card .h strong { font-size: 13px; font-weight: 600; letter-spacing: -.01em; }
+.report-card .h .pill {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  font-weight: 600;
+}
+.report-card .donut {
+  display: flex; align-items: center; gap: 18px;
+}
+.report-card .donut svg { width: 90px; height: 90px; flex-shrink: 0; }
+.report-card .legend { font-size: 12px; display: grid; gap: 6px; }
+.report-card .legend div { display: flex; align-items: center; gap: 8px; color: var(--ink-soft); }
+.report-card .legend i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+
+/* ============ INDUSTRIES TABS ============ */
+.industries {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+.industries-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 28px;
+}
+.industries-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all .15s ease;
+}
+.industries-tabs button:hover { border-color: var(--emerald); color: var(--emerald-dark); }
+.industries-tabs button.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+}
+.industries-tabs button .ic { width: 14px; height: 14px; }
+.industries-card {
+  display: none;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--paper-2) 0%, var(--emerald-tint-2) 100%);
+  border: 1px solid var(--line);
+}
+.industries-card.active { display: grid; }
+.industries-card h3 {
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+.industries-card h3 .serif {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--emerald-dark);
+}
+.industries-card .desc {
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.industries-card ul {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.industries-card li {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+.industries-card li::before {
+  content: "";
+  width: 6px; height: 6px;
+  margin-top: 9px;
+  border-radius: 999px;
+  background: var(--emerald);
+  flex-shrink: 0;
+}
+
+.industries-visual {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  padding: 22px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+.iv-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  width: max-content;
+}
+.iv-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-2);
+  font-size: 13px;
+}
+.iv-row .ic-box {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: var(--emerald-tint);
+  color: var(--emerald-dark);
+  display: grid; place-items: center;
+}
+.iv-row .ic-box.amber { background: var(--amber-tint); color: #7a5a18; }
+.iv-row .ic-box.steel { background: #e5edf0; color: var(--steel); }
+.iv-row .ic-box .ic { width: 14px; height: 14px; }
+.iv-row strong { font-weight: 600; }
+.iv-row .pct {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--emerald-dark);
+}
+@media (max-width: 980px) {
+  .industries-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+}
+
+/* ============ TIMELINE ============ */
+.process-wrap {
+  background: var(--white);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  padding: 88px 0;
+}
+.process {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  margin-top: 48px;
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  height: 1px;
+  background: var(--line);
+}
+.timeline li {
+  position: relative;
+  padding: 0 12px 0 0;
+}
+.timeline .pin {
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--emerald-dark);
+  display: grid; place-items: center;
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+.timeline li:hover .pin {
+  background: var(--emerald);
+  color: var(--white);
+  border-color: var(--emerald);
+}
+.timeline strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+.timeline p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  max-width: 200px;
+}
+@media (max-width: 880px) {
+  .timeline { grid-template-columns: 1fr; gap: 22px; }
+  .timeline::before { display: none; }
+}
+
+/* ============ FAQ ============ */
+.faq {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  padding: 88px 0;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 64px;
+}
+.faq-list { display: grid; gap: 4px; }
+details.faq-item {
+  border-top: 1px solid var(--line);
+  padding: 22px 0 22px;
+}
+details.faq-item[open] { padding-bottom: 22px; }
+details.faq-item:last-child { border-bottom: 1px solid var(--line); }
+details.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item .plus {
+  width: 30px; height: 30px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  transition: transform .25s ease, background .15s ease;
+}
+details.faq-item[open] .plus {
+  transform: rotate(45deg);
+  background: var(--emerald);
+  border-color: var(--emerald);
+  color: var(--white);
+}
+details.faq-item .plus .ic { width: 14px; height: 14px; }
+details.faq-item .answer {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 720px;
+}
+@media (max-width: 880px) {
+  .faq { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ============ CONTACT FORM ============ */
+.contact-wrap {
+  background:
+    radial-gradient(50% 60% at 0% 0%, rgba(13,138,102,.18), transparent 60%),
+    radial-gradient(40% 50% at 100% 100%, rgba(193,138,44,.12), transparent 60%),
+    var(--charcoal);
+  color: var(--white);
+  padding: 100px 0;
+}
+.contact {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 56px;
+}
+.contact h2 { color: var(--white); }
+.contact h2 .serif { color: var(--amber-soft); }
+.contact .lead { color: rgba(255,255,255,.7); }
+.contact-facts {
+  margin-top: 32px;
+  display: grid;
+  gap: 16px;
+}
+.contact-fact {
+  display: flex;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+}
+.contact-fact .ic-box {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.07);
+  color: var(--amber-soft);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.contact-fact .ic-box .ic { width: 18px; height: 18px; }
+.contact-fact strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.contact-fact small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(255,255,255,.6);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.contact-form {
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+.contact-form h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+.contact-form .sub {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.form-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field.full { grid-column: 1 / -1; }
+.field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -.005em;
+}
+.field input, .field select, .field textarea {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-2);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  outline: 0;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.field textarea { height: auto; padding: 12px 14px; min-height: 96px; resize: vertical; line-height: 1.45; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--emerald);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(13,138,102,.15);
+}
+.field.error input, .field.error select, .field.error textarea {
+  border-color: #c95151;
+  background: #fdf2f2;
+}
+.field .err {
+  font-size: 11px;
+  color: #b15050;
+  font-weight: 500;
+  display: none;
+}
+.field.error .err { display: block; }
+
+.form-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  gap: 18px;
+}
+.form-foot small {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 260px;
+  line-height: 1.4;
+}
+.form-success {
+  display: none;
+  padding: 28px;
+  background: var(--emerald-tint);
+  border: 1px solid rgba(13,138,102,.25);
+  border-radius: 12px;
+  margin-top: 24px;
+  text-align: center;
+}
+.form-success.show { display: block; }
+.form-success .ic-box {
+  width: 48px; height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 999px;
+  background: var(--emerald);
+  color: var(--white);
+  display: grid; place-items: center;
+}
+.form-success strong { display: block; font-size: 17px; font-weight: 600; }
+.form-success p { margin-top: 6px; font-size: 14px; color: var(--ink-soft); }
+
+@media (max-width: 980px) {
+  .contact { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  padding: 56px 0 40px;
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 36px;
+  align-items: start;
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-brand img { width: 32px; height: 32px; }
+.footer-brand p {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 280px;
+  line-height: 1.5;
+}
+.footer h4 {
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.footer ul {
+  margin: 0; padding: 0; list-style: none;
+  display: grid; gap: 10px;
+}
+.footer ul a {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.footer ul a:hover { color: var(--emerald-dark); }
+.footer-bottom {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+  padding: 22px 0 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+@media (max-width: 880px) {
+  .footer { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+}
+
+/* ============ ANIMATIONS ============ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float-shine {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================== NAV -->
+<header class="nav" id="nav" data-screen-label="Nav">
+  <a href="#top" class="nav-brand">
+    <img src="assets/helios-logo.png" alt="HELIOS" />
+    <span>HELIOS<span class="dot">.</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#direccion">Para dirección</a>
+    <a href="#demo">Producto</a>
+    <a href="#industrias">Industrias</a>
+    <a href="#proceso">Implementación</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="pdf/HELIOS_Brochure_Comercial.pdf" class="btn ghost">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Brochure
+    </a>
+    <a href="#contacto" class="btn primary">Agendar diagnóstico</a>
+  </div>
+</header>
+
+<!-- ============================================== HERO -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="hero-shell">
+    <div class="hero-copy">
+      <span class="eyebrow">ERP adaptable para PyMEs</span>
+      <h1>Centraliza tu operación.<br /><span class="serif">Recupera</span> el control de tu empresa.</h1>
+      <p class="lead" style="margin-top: 24px;">
+        HELIOS reúne ventas, compras, inventario, facturación y reportes en un
+        solo sistema. Sin obligar a tu equipo a cambiar su forma de trabajar.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contacto" class="btn emerald">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Solicitar diagnóstico sin costo
+        </a>
+        <a href="#demo" class="btn ghost">
+          Ver el producto
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <ul class="hero-bullets">
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Implementación por etapas</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Configuración a la medida</li>
+        <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Soporte directo del equipo</li>
+      </ul>
+
+      <div class="hero-trust">
+        <div class="avatars" aria-hidden="true">
+          <span>MR</span><span>JL</span><span>AC</span><span>+</span>
+        </div>
+        <span>Empresas en Construcción, Retail y Comercio<br />ya operan con HELIOS.</span>
+      </div>
+    </div>
+
+    <div class="hero-preview" aria-hidden="true">
+      <div class="app-window">
+        <div class="app-bar">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="url"><span class="lock"></span> app.helios.mx / ventas</div>
+          <div style="width: 50px;"></div>
+        </div>
+        <div class="app-body">
+          <div class="app-side">
+            <div class="side-logo">H</div>
+            <div class="side-ic active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <div class="side-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <div class="side-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <div class="side-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></div>
+            <div class="side-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="side-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          </div>
+          <div class="app-main">
+            <div class="app-header">
+              <div class="app-title">Ventas <em>· Septiembre</em></div>
+              <div class="app-pill">En vivo</div>
+            </div>
+            <div class="app-kpis">
+              <div class="app-kpi"><div class="k-label">Cerradas</div><div class="k-value">$1.84M</div><div class="k-delta">↑ 18.2%</div></div>
+              <div class="app-kpi"><div class="k-label">Pipeline</div><div class="k-value">$3.21M</div><div class="k-delta">↑ 7.6%</div></div>
+              <div class="app-kpi"><div class="k-label">Ticket prom.</div><div class="k-value">$28k</div><div class="k-delta neg">↓ 2.1%</div></div>
+            </div>
+            <div class="app-table">
+              <div class="row head">
+                <span>Cliente</span><span>Monto</span><span>Estado</span><span></span>
+              </div>
+              <div class="row">
+                <span class="cell-main"><i>GC</i> Grupo Cerros</span>
+                <span class="num">$182,400</span>
+                <span><span class="status">Cerrada</span></span>
+                <span class="arrow">›</span>
+              </div>
+              <div class="row">
+                <span class="cell-main"><i class="amber">FM</i> Ferretera Monte</span>
+                <span class="num">$96,800</span>
+                <span><span class="status warn">Pendiente</span></span>
+                <span class="arrow">›</span>
+              </div>
+              <div class="row">
+                <span class="cell-main"><i class="steel">CR</i> Constru Rey</span>
+                <span class="num">$214,100</span>
+                <span><span class="status">Cerrada</span></span>
+                <span class="arrow">›</span>
+              </div>
+              <div class="row">
+                <span class="cell-main"><i>VM</i> Vidrios MX</span>
+                <span class="num">$58,300</span>
+                <span><span class="status muted">Cotizada</span></span>
+                <span class="arrow">›</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-float note">
+        <div class="icon amber">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div>
+          <strong>Stock crítico</strong>
+          <small>3 SKUs por debajo del mínimo</small>
+        </div>
+      </div>
+
+      <div class="preview-float alert">
+        <div class="icon">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <strong>Cierre de mes listo</strong>
+          <small>Reporte enviado a dirección · 09:04</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== TRUST -->
+<section class="trust" data-screen-label="02 Trust">
+  <div class="trust-label">Empresas que centralizaron su operación con HELIOS</div>
+  <div class="trust-logos">
+    <div class="trust-logo"><span class="circ"></span><span class="lg">Cerros</span></div>
+    <div class="trust-logo"><span class="sq"></span>FERREMONTE</div>
+    <div class="trust-logo"><span class="lg">Construrey</span></div>
+    <div class="trust-logo"><span class="tri"></span>VIDRIOSMX</div>
+    <div class="trust-logo"><span class="circ"></span>NORTEC&nbsp;CO.</div>
+    <div class="trust-logo"><span class="lg">aralia</span></div>
+  </div>
+</section>
+
+<!-- ============================================== STATS -->
+<section class="section tight" style="padding-top: 24px;" data-screen-label="03 Stats">
+  <div class="stats">
+    <div class="stats-intro">
+      <h3>El impacto que HELIOS deja en una<br /><span class="serif">PyME</span> que se ordena.</h3>
+      <p>Promedios observados en clientes durante los primeros 6 meses de uso.</p>
+    </div>
+    <div class="stat">
+      <div class="num">−65<span class="unit">%</span></div>
+      <div class="label">Tiempo destinado<br />a armar reportes manuales.</div>
+    </div>
+    <div class="stat">
+      <div class="num">+3.4<span class="unit">x</span></div>
+      <div class="label">Velocidad para detectar<br />faltantes y desviaciones.</div>
+    </div>
+    <div class="stat">
+      <div class="num">9<span class="unit">áreas</span></div>
+      <div class="label">Conectadas bajo un<br />mismo sistema de control.</div>
+    </div>
+    <div class="stat">
+      <div class="num">1<span class="unit">fuente</span></div>
+      <div class="label">De verdad para ventas,<br />compras, caja y operación.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== DIRECCIÓN -->
+<section class="direccion-wrap" id="direccion" data-screen-label="04 Direccion">
+  <div class="direccion">
+    <div>
+      <span class="eyebrow on-dark">Para dirección</span>
+      <h2>Dirigir con claridad,<br /><span class="serif">no con suposiciones.</span></h2>
+      <p class="lead" style="margin-top: 22px;">
+        HELIOS ayuda a convertir la operación diaria en información accionable:
+        quién hizo qué, dónde está cada documento, qué área está atrasada y qué
+        necesita atención antes de volverse problema.
+      </p>
+      <div class="actions">
+        <a href="#contacto" class="btn emerald">Quiero ver una demo</a>
+        <a href="#demo" class="btn light">Cómo se ve por dentro</a>
+      </div>
+    </div>
+    <div class="direccion-grid">
+      <div class="direccion-card">
+        <div class="num">01</div>
+        <strong>Menos dependencia de personas clave</strong>
+        <p>La operación queda documentada y visible. Si alguien falta, la empresa no se detiene.</p>
+      </div>
+      <div class="direccion-card">
+        <div class="num">02</div>
+        <strong>Control multiempresa</strong>
+        <p>Permisos y visibilidad por razón social, usuario, área y proceso.</p>
+      </div>
+      <div class="direccion-card">
+        <div class="num">03</div>
+        <strong>Lectura clara del negocio</strong>
+        <p>Reportes que ya no llegan tarde. Dirección decide con datos del día.</p>
+      </div>
+      <div class="direccion-card">
+        <div class="num">04</div>
+        <strong>Crecimiento por etapas</strong>
+        <p>Empieza con los módulos clave y escala cuando la operación lo necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== COMPARISON -->
+<section class="section" data-screen-label="05 Compare">
+  <div class="section-head centered">
+    <span class="eyebrow">Antes vs. con HELIOS</span>
+    <h2>La diferencia se nota en<br />cómo se toman las decisiones.</h2>
+  </div>
+  <div class="compare">
+    <div class="compare-col before">
+      <span class="tag">Hoy en la mayoría de PyMEs</span>
+      <h3>Dirección pide información; el equipo la persigue.</h3>
+      <div class="meta">Cada área crea su propia versión de la verdad y tarda en consolidar.</div>
+      <ul>
+        <li>Reportes manuales que llegan días después.</li>
+        <li>Inventario que no coincide con lo facturado.</li>
+        <li>Procesos que viven en archivos personales.</li>
+        <li>Autorizaciones sin rastro ni responsable claro.</li>
+        <li>Cierre contable que arrastra errores del mes.</li>
+      </ul>
+    </div>
+    <div class="compare-col after">
+      <span class="tag">Con HELIOS</span>
+      <h3>La operación alimenta el sistema. Dirección ve el control.</h3>
+      <div class="meta">Una sola fuente para ventas, compras, caja, inventario y reportes.</div>
+      <ul>
+        <li>Información centralizada y al día por módulo.</li>
+        <li>Stock confiable, conectado a ventas y compras.</li>
+        <li>Flujos configurados a tu forma real de operar.</li>
+        <li>Permisos por usuario, área y empresa.</li>
+        <li>Reportes que se generan solos para dirección.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================== DEMO / PRODUCT -->
+<div class="demo-wrap" id="demo" data-screen-label="06 Demo">
+  <div class="demo">
+    <div class="section-head" style="margin-bottom: 0;">
+      <span class="eyebrow">Recorrido del producto</span>
+      <h2>Así se ve la operación<br />cuando todo vive en <span class="serif">un mismo lugar.</span></h2>
+      <p class="lead" style="margin-top: 18px;">
+        Cuatro módulos que verás en cualquier implementación de HELIOS. Cambia
+        de pestaña para recorrerlos.
+      </p>
+    </div>
+
+    <div class="demo-tabs" role="tablist">
+      <button type="button" class="active" data-demo="ventas">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18l-2 13H5z"/><path d="M16 21a2 2 0 1 0-4 0"/><path d="M8 21a2 2 0 1 0-4 0"/></svg>
+        Ventas
       </button>
-    </header>
+      <button type="button" data-demo="inventario">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Inventario
+      </button>
+      <button type="button" data-demo="compras">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Compras
+      </button>
+      <button type="button" data-demo="reportes">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Reportes
+      </button>
+    </div>
 
-    <main id="inicio">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true"></div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <div class="hero-shell">
-          <div class="hero-content">
-            <p class="eyebrow">ERP adaptable para empresas en crecimiento</p>
-            <h1 id="hero-title">HELIOS ERP centraliza tu operación en un solo lugar.</h1>
-            <p class="hero-lead">
-              Para empresas en crecimiento que ya no pueden controlar ventas,
-              compras, inventario, facturación y reportes con Excel, mensajes
-              o archivos sueltos.
-            </p>
-
-            <div class="hero-answer" aria-label="HELIOS en 10 segundos">
-              <div>
-                <strong>Qué hace</strong>
-                <span>Centraliza ventas, compras, inventario, documentos y reportes.</span>
-              </div>
-              <div>
-                <strong>Para quién</strong>
-                <span>Empresas en crecimiento con operación dispersa o multiárea.</span>
-              </div>
-              <div>
-                <strong>Por qué conviene</strong>
-                <span>Control real, menos errores y decisiones con información confiable.</span>
-              </div>
+    <div class="demo-stage">
+      <div class="stage-grid">
+        <div class="demo-window">
+          <div class="win-bar">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="breadcrumb"><span>HELIOS</span> · <b id="demo-bc">Ventas</b></div>
+            <div class="user"><span class="avatar">MR</span> Marisol R.</div>
+          </div>
+          <div class="win-body">
+            <div class="win-side">
+              <div class="side-section">Operación</div>
+              <div class="side-item" data-side="ventas"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18l-2 13H5z"/></svg> Ventas <span class="count">42</span></div>
+              <div class="side-item" data-side="inventario"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Inventario <span class="count">218</span></div>
+              <div class="side-item" data-side="compras"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/></svg> Compras <span class="count">17</span></div>
+              <div class="side-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/></svg> Caja</div>
+              <div class="side-section">Análisis</div>
+              <div class="side-item" data-side="reportes"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Reportes</div>
+              <div class="side-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Indicadores</div>
             </div>
+            <div class="win-content">
+              <!-- VENTAS -->
+              <div class="demo-panel active" id="panel-ventas">
+                <div class="win-h">
+                  <div>
+                    <div class="ttl">Ventas del mes</div>
+                    <div class="sub">42 oportunidades · 18 cerradas</div>
+                  </div>
+                  <div class="right">
+                    <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg> Filtros</button>
+                    <button class="primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nueva venta</button>
+                  </div>
+                </div>
+                <div class="kpi-row">
+                  <div class="kpi-card"><div class="k-l">Cerradas</div><div class="k-v">$1.84M</div><div class="k-d">↑ 18.2% vs ago.</div></div>
+                  <div class="kpi-card"><div class="k-l">Pipeline</div><div class="k-v">$3.21M</div><div class="k-d">↑ 7.6%</div></div>
+                  <div class="kpi-card"><div class="k-l">Ticket prom.</div><div class="k-v">$28k</div><div class="k-d neg">↓ 2.1%</div></div>
+                  <div class="kpi-card"><div class="k-l">Cobranza</div><div class="k-v">94<span style="font-size:14px;color:var(--muted);">%</span></div><div class="k-d">↑ 1.4 pp</div></div>
+                </div>
+                <div class="chart" aria-hidden="true">
+                  <svg viewBox="0 0 600 120" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#0d8a66" stop-opacity=".35"/>
+                        <stop offset="100%" stop-color="#0d8a66" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,90 L40,75 L80,85 L120,60 L160,68 L200,48 L240,55 L280,40 L320,42 L360,30 L400,38 L440,22 L480,28 L520,18 L560,24 L600,12 L600,120 L0,120 Z" fill="url(#g1)"/>
+                    <path d="M0,90 L40,75 L80,85 L120,60 L160,68 L200,48 L240,55 L280,40 L320,42 L360,30 L400,38 L440,22 L480,28 L520,18 L560,24 L600,12" fill="none" stroke="#0d8a66" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="demo-table">
+                  <div class="t-head">
+                    <span>Cliente</span><span>Vendedor</span><span>Monto</span><span>Estado</span><span></span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av">GC</span> Grupo Cerros</span>
+                    <span class="num-cell">Laura V.</span>
+                    <span class="num-cell">$182,400</span>
+                    <span class="status-cell"><span class="s">Cerrada</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av amber">FM</span> Ferretera Monte</span>
+                    <span class="num-cell">Pablo S.</span>
+                    <span class="num-cell">$96,800</span>
+                    <span class="status-cell"><span class="s warn">Pendiente</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av steel">CR</span> Constru Rey</span>
+                    <span class="num-cell">Laura V.</span>
+                    <span class="num-cell">$214,100</span>
+                    <span class="status-cell"><span class="s">Cerrada</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av charcoal">VM</span> Vidrios MX</span>
+                    <span class="num-cell">Karla P.</span>
+                    <span class="num-cell">$58,300</span>
+                    <span class="status-cell"><span class="s muted">Cotizada</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av">NT</span> Nortec Co.</span>
+                    <span class="num-cell">Pablo S.</span>
+                    <span class="num-cell">$132,000</span>
+                    <span class="status-cell"><span class="s">Cerrada</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                </div>
+              </div>
 
-            <div class="hero-actions">
-              <a
-                class="button primary"
-                href="mailto:samuelgamas75@gmail.com?subject=Solicito%20diagn%C3%B3stico%20inicial%20de%20HELIOS&body=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20inicial%20sin%20costo%20para%20evaluar%20c%C3%B3mo%20HELIOS%20puede%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa.%0A%0ANombre%3A%0AEmpresa%3A%0AGiro%3A%0ATel%C3%A9fono%3A%0A"
-              >
-                <i data-lucide="send"></i>
-                <span>Solicitar diagnóstico sin costo</span>
-              </a>
-              <a class="button secondary" href="./pdf/HELIOS_Brochure_Comercial.pdf">
-                <i data-lucide="file-down"></i>
-                <span>Ver brochure</span>
-              </a>
-            </div>
+              <!-- INVENTARIO -->
+              <div class="demo-panel" id="panel-inventario">
+                <div class="win-h">
+                  <div>
+                    <div class="ttl">Inventario general</div>
+                    <div class="sub">218 SKUs · 3 almacenes</div>
+                  </div>
+                  <div class="right">
+                    <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Movimientos</button>
+                    <button class="primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Entrada</button>
+                  </div>
+                </div>
+                <div class="kpi-row">
+                  <div class="kpi-card"><div class="k-l">SKUs activos</div><div class="k-v">218</div><div class="k-d">↑ 4</div></div>
+                  <div class="kpi-card"><div class="k-l">Valor en stock</div><div class="k-v">$2.18M</div><div class="k-d neg">↓ 3.4%</div></div>
+                  <div class="kpi-card"><div class="k-l">Crítico</div><div class="k-v" style="color:#b15050;">3</div><div class="k-d neg">↑ 1</div></div>
+                  <div class="kpi-card"><div class="k-l">Rotación</div><div class="k-v">2.3<span style="font-size:14px;color:var(--muted);">x</span></div><div class="k-d">↑ 0.2</div></div>
+                </div>
+                <div class="stock-grid">
+                  <div class="stock-card">
+                    <div class="sku">SKU 1042 · Almacén Norte</div>
+                    <div class="name">Lámina galvanizada cal. 22</div>
+                    <div class="bar"><i style="width: 78%"></i></div>
+                    <div class="meta"><span>78% del óptimo</span><span><b>410</b> / 525</span></div>
+                  </div>
+                  <div class="stock-card warn">
+                    <div class="sku">SKU 0871 · Almacén Centro</div>
+                    <div class="name">Tornillo autorroscante 1/4</div>
+                    <div class="bar"><i style="width: 32%"></i></div>
+                    <div class="meta"><span>Próximo al mínimo</span><span><b>1,280</b> / 4,000</span></div>
+                  </div>
+                  <div class="stock-card low">
+                    <div class="sku">SKU 1106 · Almacén Sur</div>
+                    <div class="name">Cable THW cal. 12 negro</div>
+                    <div class="bar"><i style="width: 12%"></i></div>
+                    <div class="meta"><span style="color:#b15050;">Stock crítico</span><span><b>240</b> / 2,000</span></div>
+                  </div>
+                  <div class="stock-card">
+                    <div class="sku">SKU 0432 · Almacén Norte</div>
+                    <div class="name">Cemento gris saco 50kg</div>
+                    <div class="bar"><i style="width: 64%"></i></div>
+                    <div class="meta"><span>Saludable</span><span><b>320</b> / 500</span></div>
+                  </div>
+                  <div class="stock-card">
+                    <div class="sku">SKU 0789 · Almacén Centro</div>
+                    <div class="name">Pintura vinílica blanca 19L</div>
+                    <div class="bar"><i style="width: 88%"></i></div>
+                    <div class="meta"><span>Saludable</span><span><b>176</b> / 200</span></div>
+                  </div>
+                  <div class="stock-card warn">
+                    <div class="sku">SKU 0623 · Almacén Sur</div>
+                    <div class="name">Tubo PVC 1/2" hidráulico</div>
+                    <div class="bar"><i style="width: 41%"></i></div>
+                    <div class="meta"><span>Próximo al mínimo</span><span><b>820</b> / 2,000</span></div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="hero-proof" aria-label="Ventajas principales">
-              <span>ERP a la medida</span>
-              <span>Contabilidad y facturación</span>
-              <span>Reportes para dirección</span>
+              <!-- COMPRAS -->
+              <div class="demo-panel" id="panel-compras">
+                <div class="win-h">
+                  <div>
+                    <div class="ttl">Órdenes de compra</div>
+                    <div class="sub">17 abiertas · 4 esperan autorización</div>
+                  </div>
+                  <div class="right">
+                    <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Proveedores</button>
+                    <button class="primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nueva orden</button>
+                  </div>
+                </div>
+                <div class="kpi-row">
+                  <div class="kpi-card"><div class="k-l">Abiertas</div><div class="k-v">17</div><div class="k-d neg">↑ 3</div></div>
+                  <div class="kpi-card"><div class="k-l">Por autorizar</div><div class="k-v" style="color:#7a5a18;">4</div><div class="k-d">Hoy</div></div>
+                  <div class="kpi-card"><div class="k-l">Monto activo</div><div class="k-v">$684k</div><div class="k-d">↑ 12%</div></div>
+                  <div class="kpi-card"><div class="k-l">Proveedores</div><div class="k-v">62</div><div class="k-d">+2 nuevos</div></div>
+                </div>
+                <div class="demo-table">
+                  <div class="t-head">
+                    <span>Proveedor</span><span>Solicitó</span><span>Monto</span><span>Estado</span><span></span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av">AC</span> Aceros del Centro</span>
+                    <span class="num-cell">Compras MX</span>
+                    <span class="num-cell">$142,800</span>
+                    <span class="status-cell"><span class="s warn">Por autorizar</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av amber">PD</span> Pinturas del Norte</span>
+                    <span class="num-cell">Almacén</span>
+                    <span class="num-cell">$38,400</span>
+                    <span class="status-cell"><span class="s">Enviada</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av steel">EL</span> Eléctrica López</span>
+                    <span class="num-cell">Compras MX</span>
+                    <span class="num-cell">$96,200</span>
+                    <span class="status-cell"><span class="s">Recibida</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av charcoal">FR</span> Ferretería Rey</span>
+                    <span class="num-cell">Obra 18</span>
+                    <span class="num-cell">$24,150</span>
+                    <span class="status-cell"><span class="s warn">Por autorizar</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av">CM</span> Cementos MX</span>
+                    <span class="num-cell">Obra 22</span>
+                    <span class="num-cell">$208,000</span>
+                    <span class="status-cell"><span class="s muted">Borrador</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- REPORTES -->
+              <div class="demo-panel" id="panel-reportes">
+                <div class="win-h">
+                  <div>
+                    <div class="ttl">Reportes para dirección</div>
+                    <div class="sub">Vista ejecutiva · Septiembre 2026</div>
+                  </div>
+                  <div class="right">
+                    <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Exportar</button>
+                    <button class="primary"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Programar</button>
+                  </div>
+                </div>
+                <div class="kpi-row">
+                  <div class="kpi-card"><div class="k-l">Ingresos</div><div class="k-v">$4.62M</div><div class="k-d">↑ 14%</div></div>
+                  <div class="kpi-card"><div class="k-l">Egresos</div><div class="k-v">$3.21M</div><div class="k-d neg">↑ 6%</div></div>
+                  <div class="kpi-card"><div class="k-l">Margen op.</div><div class="k-v">22<span style="font-size:14px;color:var(--muted);">%</span></div><div class="k-d">↑ 1.8 pp</div></div>
+                  <div class="kpi-card"><div class="k-l">Días cierre</div><div class="k-v">3</div><div class="k-d">−4 vs 2024</div></div>
+                </div>
+                <div class="report-grid">
+                  <div class="report-card">
+                    <div class="h"><strong>Ingresos por área</strong><span class="pill">Hoy</span></div>
+                    <div class="donut">
+                      <svg viewBox="0 0 36 36" aria-hidden="true">
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#eef3ef" stroke-width="6"/>
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#0d8a66" stroke-width="6"
+                          stroke-dasharray="44 88" stroke-dashoffset="0" transform="rotate(-90 18 18)" stroke-linecap="butt"/>
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#c18a2c" stroke-width="6"
+                          stroke-dasharray="28 88" stroke-dashoffset="-44" transform="rotate(-90 18 18)"/>
+                        <circle cx="18" cy="18" r="14" fill="none" stroke="#2a4f5c" stroke-width="6"
+                          stroke-dasharray="16 88" stroke-dashoffset="-72" transform="rotate(-90 18 18)"/>
+                      </svg>
+                      <div class="legend">
+                        <div><i style="background:#0d8a66;"></i> Comercial 50%</div>
+                        <div><i style="background:#c18a2c;"></i> Obras 32%</div>
+                        <div><i style="background:#2a4f5c;"></i> Servicios 18%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="report-card">
+                    <div class="h"><strong>Tendencia trimestral</strong><span class="pill">Q3</span></div>
+                    <div style="height:90px;">
+                      <svg viewBox="0 0 200 90" preserveAspectRatio="none" style="width:100%;height:100%;">
+                        <g>
+                          <rect x="10" y="50" width="22" height="32" fill="#e8f4ef" rx="3"/>
+                          <rect x="10" y="38" width="22" height="14" fill="#0d8a66" rx="3"/>
+                          <rect x="42" y="40" width="22" height="42" fill="#e8f4ef" rx="3"/>
+                          <rect x="42" y="28" width="22" height="14" fill="#0d8a66" rx="3"/>
+                          <rect x="74" y="32" width="22" height="50" fill="#e8f4ef" rx="3"/>
+                          <rect x="74" y="20" width="22" height="14" fill="#0d8a66" rx="3"/>
+                          <rect x="106" y="28" width="22" height="54" fill="#e8f4ef" rx="3"/>
+                          <rect x="106" y="14" width="22" height="16" fill="#0d8a66" rx="3"/>
+                          <rect x="138" y="22" width="22" height="60" fill="#e8f4ef" rx="3"/>
+                          <rect x="138" y="6" width="22" height="18" fill="#0d8a66" rx="3"/>
+                          <rect x="170" y="18" width="22" height="64" fill="#fbf3df" rx="3"/>
+                          <rect x="170" y="6" width="22" height="14" fill="#c18a2c" rx="3"/>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="demo-table">
+                  <div class="t-head">
+                    <span>Reporte</span><span>Frecuencia</span><span>Última corrida</span><span>Estado</span><span></span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av">CR</span> Cierre comercial</span>
+                    <span class="num-cell">Diaria</span>
+                    <span class="num-cell">Hoy · 09:04</span>
+                    <span class="status-cell"><span class="s">Enviado</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av amber">FL</span> Flujo de caja</span>
+                    <span class="num-cell">Semanal</span>
+                    <span class="num-cell">Lun · 08:30</span>
+                    <span class="status-cell"><span class="s">Enviado</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av steel">MP</span> Movimientos por proveedor</span>
+                    <span class="num-cell">Mensual</span>
+                    <span class="num-cell">01 sep</span>
+                    <span class="status-cell"><span class="s warn">Pendiente firma</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                  <div class="t-row">
+                    <span class="main-cell"><span class="av charcoal">RH</span> RH · ausentismos</span>
+                    <span class="num-cell">Quincenal</span>
+                    <span class="num-cell">15 sep</span>
+                    <span class="status-cell"><span class="s">Enviado</span></span>
+                    <span class="more">⋯</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <aside class="hero-panel" aria-label="Proceso comercial de diagnóstico HELIOS">
-            <div class="panel-top">
-              <span>Diagnóstico HELIOS</span>
-              <strong>Antes de cotizar, entendemos la operación.</strong>
-            </div>
-            <div class="panel-list">
-              <div>
-                <i data-lucide="search-check"></i>
-                <span>Procesos críticos</span>
-                <strong>Mapa de áreas, flujos y documentos.</strong>
-              </div>
-              <div>
-                <i data-lucide="layout-dashboard"></i>
-                <span>Módulos correctos</span>
-                <strong>Solo lo necesario para crear control real.</strong>
-              </div>
-              <div>
-                <i data-lucide="route"></i>
-                <span>Plan por etapas</span>
-                <strong>Implementación gradual, sin frenar la operación.</strong>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="signal-strip" aria-label="Resumen comercial de HELIOS">
-        <div>
-          <i data-lucide="binoculars"></i>
-          <strong>Visibilidad para dirección</strong>
-          <span>Información clara para dejar de perseguir reportes por área.</span>
-        </div>
-        <div>
-          <i data-lucide="shield-check"></i>
-          <strong>Control por rol y empresa</strong>
-          <span>Usuarios, permisos, documentos y trazabilidad bajo reglas claras.</span>
-        </div>
-        <div>
-          <i data-lucide="blocks"></i>
-          <strong>ERP que se adapta</strong>
-          <span>Módulos configurados según el giro, prioridades y ritmo del cliente.</span>
-        </div>
-      </section>
-
-      <section class="section symptoms-section" id="sintomas" aria-labelledby="symptoms-title">
-        <div class="section-copy">
-          <p class="eyebrow">Síntomas de que ya necesitas ERP</p>
-          <h2 id="symptoms-title">El caos operativo también tiene costo.</h2>
-          <p>
-            Las empresas no pierden control de golpe. Lo pierden cuando cada área
-            crea su propio sistema, la información llega tarde y las decisiones se
-            toman con datos incompletos.
-          </p>
         </div>
 
-        <div class="symptom-grid">
-          <article>
-            <i data-lucide="files"></i>
-            <h3>Demasiados archivos sueltos</h3>
-            <p>Excel, carpetas, mensajes y formatos que no siempre cuentan la misma historia.</p>
-          </article>
-          <article>
-            <i data-lucide="repeat-2"></i>
-            <h3>Captura doble</h3>
-            <p>El equipo repite datos, corrige errores y pierde tiempo administrativo.</p>
-          </article>
-          <article>
-            <i data-lucide="circle-alert"></i>
-            <h3>Poca trazabilidad</h3>
-            <p>Compras, ventas, inventario y documentos difíciles de seguir con precisión.</p>
-          </article>
-          <article>
-            <i data-lucide="clock-3"></i>
-            <h3>Reportes tardíos</h3>
-            <p>Dirección decide tarde porque la información tarda en consolidarse.</p>
-          </article>
+        <div class="demo-aside">
+          <div class="step active" data-step="ventas">
+            <div class="step-num">— 01</div>
+            <strong>Ventas centralizadas</strong>
+            <p>Pipeline, cierres, cobranza y ticket promedio en una sola vista.</p>
+          </div>
+          <div class="step" data-step="inventario">
+            <div class="step-num">— 02</div>
+            <strong>Inventario en tiempo real</strong>
+            <p>Alertas de stock crítico y conexión directa con ventas y compras.</p>
+          </div>
+          <div class="step" data-step="compras">
+            <div class="step-num">— 03</div>
+            <strong>Compras con autorización</strong>
+            <p>Proveedores, órdenes, costos y trazabilidad de cada documento.</p>
+          </div>
+          <div class="step" data-step="reportes">
+            <div class="step-num">— 04</div>
+            <strong>Reportes para dirección</strong>
+            <p>Cierre de mes, flujo de caja y reportes ejecutivos que llegan solos.</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <section class="executive-section" id="direccion" aria-labelledby="executive-title">
-        <div class="executive-copy">
-          <p class="eyebrow">Lo que HELIOS cambia en dirección</p>
-          <h2 id="executive-title">No es solo ordenar módulos. Es dirigir con claridad.</h2>
-          <p>
-            HELIOS ayuda a convertir la operación diaria en información accionable:
-            quién hizo qué, dónde está cada documento, qué área está atrasada y qué
-            necesita atención antes de que se vuelva problema.
-          </p>
-          <a
-            class="button primary dark"
-            href="mailto:samuelgamas75@gmail.com?subject=Solicito%20diagn%C3%B3stico%20inicial%20de%20HELIOS&body=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20inicial%20sin%20costo%20para%20evaluar%20c%C3%B3mo%20HELIOS%20puede%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa.%0A%0ANombre%3A%0AEmpresa%3A%0AGiro%3A%0ATel%C3%A9fono%3A%0A"
-          >
-            <i data-lucide="calendar-check"></i>
-            <span>Agendar diagnóstico</span>
-          </a>
-        </div>
+<!-- ============================================== INDUSTRIES -->
+<section class="industries" id="industrias" data-screen-label="07 Industrias">
+  <div class="section-head">
+    <span class="eyebrow">Casos por industria</span>
+    <h2>HELIOS habla el idioma<br />de tu <span class="serif">operación.</span></h2>
+    <p class="lead" style="margin-top: 18px;">
+      Cada giro necesita controles distintos. El sistema se configura con los
+      módulos, permisos y reportes pensados para el día a día de tu industria.
+    </p>
+  </div>
 
-        <div class="executive-grid">
+  <div class="industries-tabs" role="tablist">
+    <button type="button" class="active" data-ind="constructoras">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a5 5 0 0 1 5-5h10a5 5 0 0 1 5 5"/><path d="M6 11l6-7 6 7"/></svg>
+      Constructoras
+    </button>
+    <button type="button" data-ind="comercializadoras">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      Comercializadoras
+    </button>
+    <button type="button" data-ind="retail">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 12H5z"/><path d="M3 9l2-6h14l2 6"/></svg>
+      Retail
+    </button>
+    <button type="button" data-ind="servicios">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      Servicios
+    </button>
+  </div>
+
+  <article class="industries-card active" data-ind-panel="constructoras">
+    <div>
+      <h3>Control por obra,<br />desde la <span class="serif">compra</span> hasta la <span class="serif">estimación.</span></h3>
+      <p class="desc">
+        Conecta obras, presupuestos, avances, maquinaria, subcontratistas, compras
+        por proyecto y reportes para dirección. Cada obra, una operación entera.
+      </p>
+      <ul>
+        <li>Estimaciones y avance operativo en tiempo real.</li>
+        <li>Compras vinculadas a obra y centro de costo.</li>
+        <li>Bitácoras, subcontratistas y maquinaria en un solo expediente.</li>
+        <li>Visibilidad de costos y responsables por etapa.</li>
+      </ul>
+    </div>
+    <div class="industries-visual">
+      <span class="iv-tag">Obra · Av. Las Cumbres</span>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Cimentación</strong><span class="pct">100%</span></div>
+      <div class="iv-row"><span class="ic-box amber"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><strong>Estructura</strong><span class="pct">72%</span></div>
+      <div class="iv-row"><span class="ic-box steel"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span><strong>Instalaciones</strong><span class="pct">34%</span></div>
+      <div class="iv-row"><span class="ic-box amber"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><strong>Acabados</strong><span class="pct">12%</span></div>
+    </div>
+  </article>
+
+  <article class="industries-card" data-ind-panel="comercializadoras">
+    <div>
+      <h3>Inventario, ventas y compras<br /><span class="serif">conectadas</span> en una sola operación.</h3>
+      <p class="desc">
+        Centraliza proveedores, clientes, productos, órdenes, facturación,
+        márgenes y reportes comerciales en un solo lugar.
+      </p>
+      <ul>
+        <li>Stock confiable por almacén y movimiento.</li>
+        <li>Seguimiento comercial y administrativo conectado.</li>
+        <li>Cotizaciones, pedidos y facturas en el mismo flujo.</li>
+        <li>Reportes para compras, ventas y dirección.</li>
+      </ul>
+    </div>
+    <div class="industries-visual">
+      <span class="iv-tag">Comercializadora · Inventario</span>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Lámina galv.</strong><span class="pct">78%</span></div>
+      <div class="iv-row"><span class="ic-box amber"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></span><strong>Tornillería</strong><span class="pct">32%</span></div>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Cemento gris</strong><span class="pct">64%</span></div>
+      <div class="iv-row"><span class="ic-box steel"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Pintura vinílica</strong><span class="pct">88%</span></div>
+    </div>
+  </article>
+
+  <article class="industries-card" data-ind-panel="retail">
+    <div>
+      <h3>Caja, cortes y sucursales<br /><span class="serif">bajo</span> el mismo control.</h3>
+      <p class="desc">
+        Diseñado para operaciones con punto de venta, tickets, sesiones de caja,
+        métodos de pago, inventario y reportes diarios.
+      </p>
+      <ul>
+        <li>Cortes de caja y trazabilidad por sesión.</li>
+        <li>Control por sucursal, usuario y método de pago.</li>
+        <li>Inventario que se actualiza con cada venta.</li>
+        <li>Reportes diarios para administración y dirección.</li>
+      </ul>
+    </div>
+    <div class="industries-visual">
+      <span class="iv-tag">Sucursal · Centro</span>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Caja 01 abierta</strong><span class="pct">$84,210</span></div>
+      <div class="iv-row"><span class="ic-box amber"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span><strong>Caja 02 corte</strong><span class="pct">17:08</span></div>
+      <div class="iv-row"><span class="ic-box steel"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></span><strong>Tickets hoy</strong><span class="pct">214</span></div>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Inventario</strong><span class="pct">OK</span></div>
+    </div>
+  </article>
+
+  <article class="industries-card" data-ind-panel="servicios">
+    <div>
+      <h3>Órdenes, clientes y seguimiento<br /><span class="serif">sin perder</span> el contexto.</h3>
+      <p class="desc">
+        HELIOS organiza clientes, actividades, documentos, responsables, cobranza
+        y reportes de desempeño por área de servicio.
+      </p>
+      <ul>
+        <li>Órdenes y seguimiento operativo por cliente.</li>
+        <li>Documentos centralizados con permisos por rol.</li>
+        <li>Cobranza enlazada a la orden y al cliente.</li>
+        <li>Indicadores de desempeño por equipo o cuenta.</li>
+      </ul>
+    </div>
+    <div class="industries-visual">
+      <span class="iv-tag">Cuenta · Cliente AC-082</span>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Orden 1102</strong><span class="pct">Cerrada</span></div>
+      <div class="iv-row"><span class="ic-box amber"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><strong>Orden 1118</strong><span class="pct">En curso</span></div>
+      <div class="iv-row"><span class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><strong>Cobranza</strong><span class="pct">96%</span></div>
+      <div class="iv-row"><span class="ic-box steel"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></span><strong>Expedientes</strong><span class="pct">12</span></div>
+    </div>
+  </article>
+</section>
+
+<!-- ============================================== TIMELINE / PROCESS -->
+<div class="process-wrap" id="proceso" data-screen-label="08 Proceso">
+  <div class="process">
+    <div class="section-head" style="margin-bottom: 0;">
+      <span class="eyebrow">Implementación con método</span>
+      <h2>Un ERP que se construye con<br /><span class="serif">diagnóstico</span>, no con suposiciones.</h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <div class="pin">i</div>
+        <strong>Diagnóstico</strong>
+        <p>Mapeo de áreas, documentos, usuarios, permisos y prioridades.</p>
+      </li>
+      <li>
+        <div class="pin">ii</div>
+        <strong>Alcance</strong>
+        <p>Módulos, reportes y reglas de operación por etapas.</p>
+      </li>
+      <li>
+        <div class="pin">iii</div>
+        <strong>Configuración</strong>
+        <p>Catálogos, usuarios, permisos, empresas y flujos principales.</p>
+      </li>
+      <li>
+        <div class="pin">iv</div>
+        <strong>Capacitación</strong>
+        <p>Entrenamiento por rol para que cada equipo use lo suyo.</p>
+      </li>
+      <li>
+        <div class="pin">v</div>
+        <strong>Acompañamiento</strong>
+        <p>Mejora continua y expansión de módulos según crece la operación.</p>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<!-- ============================================== FAQ -->
+<section class="faq" id="faq" data-screen-label="09 FAQ">
+  <div>
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2>Lo que dueños y<br />gerentes <span class="serif">preguntan</span> antes de avanzar.</h2>
+    <p class="lead" style="margin-top: 18px;">
+      Si tu duda no está aquí, escríbenos por el formulario y te respondemos
+      con el detalle real de tu operación.
+    </p>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item" open>
+      <summary>
+        ¿Cuánto tarda una implementación?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        Depende del alcance, pero la mayoría arranca con módulos clave en
+        <strong>4 a 8 semanas</strong>. Trabajamos por etapas para que no se
+        frene la operación: se entrega valor desde la primera fase y se expanden
+        módulos conforme tu empresa lo necesite.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>
+        ¿Tengo que cambiar mi forma de trabajar?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        No. Es justo lo que HELIOS evita. Empezamos con un diagnóstico de cómo
+        opera tu empresa hoy y configuramos el sistema alrededor de ese flujo,
+        no al revés. Solo se proponen cambios cuando un proceso genere errores o
+        captura doble.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>
+        ¿Funciona si tengo más de una empresa o sucursal?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        Sí. HELIOS está diseñado multi-empresa y multi-sucursal desde el inicio.
+        Cada razón social tiene su propia operación, permisos y reportes, y
+        dirección puede ver el consolidado cuando lo necesite.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>
+        ¿Qué pasa con la información que ya tengo?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        Migramos catálogos, clientes, proveedores e inventario desde Excel o
+        desde tu sistema actual como parte de la configuración inicial. No
+        empiezas de cero ni pierdes histórico.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>
+        ¿Cómo se cotiza?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        La implementación se cotiza según el alcance real: módulos requeridos,
+        usuarios, complejidad de procesos y empresas. Por eso el primer paso es
+        un <strong>diagnóstico sin costo</strong>: para que tu cotización refleje
+        solo lo que tu empresa necesita.
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>
+        ¿Quién da soporte después de la implementación?
+        <span class="plus"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+      </summary>
+      <div class="answer">
+        El mismo equipo que conoce tu operación. Hay acompañamiento continuo
+        para ajustes, nuevos módulos, capacitación de personal y mejoras según
+        tus prioridades.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================== CONTACT -->
+<div class="contact-wrap" id="contacto" data-screen-label="10 Contacto">
+  <div class="contact">
+    <div>
+      <span class="eyebrow on-dark">Siguiente paso</span>
+      <h2>Empieza con un<br /><span class="serif">diagnóstico</span> sin costo.</h2>
+      <p class="lead" style="margin-top: 18px;">
+        Revisamos tu operación, detectamos los puntos críticos y definimos qué
+        módulos necesita HELIOS para darte control sin imponer un paquete genérico.
+      </p>
+      <div class="contact-facts">
+        <div class="contact-fact">
+          <div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div>
-            <span>01</span>
-            <strong>Menos dependencia de personas clave</strong>
-            <p>La operación queda documentada y visible para el equipo correcto.</p>
+            <strong>Sesión de 30 minutos</strong>
+            <small>Una llamada con dirección u operación. Sin presentaciones genéricas.</small>
           </div>
+        </div>
+        <div class="contact-fact">
+          <div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
           <div>
-            <span>02</span>
-            <strong>Más control multiempresa</strong>
-            <p>Permisos y visibilidad por razón social, usuario, área y proceso.</p>
+            <strong>Resumen ejecutivo posterior</strong>
+            <small>Recibes un documento con áreas críticas y módulos sugeridos.</small>
           </div>
+        </div>
+        <div class="contact-fact">
+          <div class="ic-box"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           <div>
-            <span>03</span>
-            <strong>Mejor lectura del negocio</strong>
-            <p>Reportes claros para dirección, administración y operación.</p>
-          </div>
-          <div>
-            <span>04</span>
-            <strong>Crecimiento por etapas</strong>
-            <p>Empieza con los módulos clave y escala cuando la empresa lo necesite.</p>
+            <strong>Sin compromiso</strong>
+            <small>Si HELIOS no es el ajuste correcto, lo decimos en la misma sesión.</small>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section class="section comparison-section" aria-labelledby="comparison-title">
-        <div class="section-heading centered">
-          <p class="eyebrow">Antes vs. con HELIOS</p>
-          <h2 id="comparison-title">La diferencia se nota en cómo se decide.</h2>
+    <form class="contact-form" id="leadForm" novalidate>
+      <h3>Cuéntanos sobre tu empresa</h3>
+      <p class="sub">Te respondemos en menos de 24 horas hábiles.</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-nombre">Nombre</label>
+          <input type="text" id="f-nombre" name="nombre" placeholder="Tu nombre" required />
+          <span class="err">Necesitamos tu nombre.</span>
         </div>
-
-        <div class="compare-panel" aria-label="Comparación antes y después de HELIOS">
-          <div class="compare-column before">
-            <span>Hoy</span>
-            <strong>Dirección pide información; el equipo la persigue.</strong>
-            <ul>
-              <li>Reportes manuales y tardíos.</li>
-              <li>Inventario difícil de confiar.</li>
-              <li>Procesos que dependen de archivos personales.</li>
-              <li>Autorizaciones y documentos sin trazabilidad clara.</li>
-            </ul>
-          </div>
-          <div class="compare-column after">
-            <span>Con HELIOS</span>
-            <strong>La operación alimenta el sistema; dirección ve el control.</strong>
-            <ul>
-              <li>Información centralizada por módulo.</li>
-              <li>Usuarios, permisos y empresas bien definidos.</li>
-              <li>Flujos configurados alrededor de la operación real.</li>
-              <li>Base lista para contabilidad, facturación y reportes.</li>
-            </ul>
-          </div>
+        <div class="field">
+          <label for="f-empresa">Empresa</label>
+          <input type="text" id="f-empresa" name="empresa" placeholder="Razón social o nombre comercial" required />
+          <span class="err">¿Cómo se llama tu empresa?</span>
         </div>
-      </section>
-
-      <section class="showcase-section" id="adaptable" aria-labelledby="adaptive-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">La diferencia HELIOS</p>
-          <h2 id="adaptive-title">Primero entendemos cómo trabajas. Después configuramos el ERP.</h2>
-          <p>
-            Muchos sistemas obligan al cliente a cambiar su forma de operar. HELIOS
-            parte del diagnóstico: procesos, áreas, permisos, documentos, reportes
-            y prioridades. Después se define el alcance correcto.
-          </p>
+        <div class="field">
+          <label for="f-email">Correo</label>
+          <input type="email" id="f-email" name="email" placeholder="nombre@empresa.com" required />
+          <span class="err">Correo inválido.</span>
         </div>
-
-        <div class="command-center" aria-label="Panel conceptual de módulos HELIOS">
-          <div class="console-header">
-            <span></span>
-            <strong>HELIOS Command Center</strong>
-            <em>Operación conectada</em>
-          </div>
-          <div class="console-grid">
-            <div class="metric">
-              <span>Ventas</span>
-              <strong>Seguimiento comercial</strong>
-              <i></i>
-            </div>
-            <div class="metric">
-              <span>Inventario</span>
-              <strong>Stock visible</strong>
-              <i></i>
-            </div>
-            <div class="metric">
-              <span>Compras</span>
-              <strong>Autorizaciones</strong>
-              <i></i>
-            </div>
-            <div class="metric">
-              <span>Dirección</span>
-              <strong>Reportes claros</strong>
-              <i></i>
-            </div>
-          </div>
-          <div class="console-flow">
-            <span>Diagnóstico</span>
-            <span>Configuración</span>
-            <span>Capacitación</span>
-            <span>Mejora continua</span>
-          </div>
+        <div class="field">
+          <label for="f-telefono">Teléfono</label>
+          <input type="tel" id="f-telefono" name="telefono" placeholder="+52 ..." />
+          <span class="err">Teléfono inválido.</span>
         </div>
-      </section>
-
-      <section class="section modules-section" id="modulos" aria-labelledby="modules-title">
-        <div class="section-heading centered">
-          <p class="eyebrow">Módulos conectados</p>
-          <h2 id="modules-title">Todo lo que necesitas para operar con claridad.</h2>
-          <p>
-            La implementación se cotiza según el alcance real del cliente. Se activan
-            los módulos correctos, con permisos, flujos y reportes alineados a la operación.
-          </p>
+        <div class="field full">
+          <label for="f-giro">Giro principal</label>
+          <select id="f-giro" name="giro" required>
+            <option value="">Selecciona…</option>
+            <option>Constructora</option>
+            <option>Comercializadora / Distribuidora</option>
+            <option>Retail / Punto de venta</option>
+            <option>Servicios profesionales</option>
+            <option>Manufactura</option>
+            <option>Otro</option>
+          </select>
+          <span class="err">Selecciona un giro.</span>
         </div>
-
-        <div class="module-grid">
-          <article>
-            <i data-lucide="users-round"></i>
-            <h3>Recursos Humanos</h3>
-            <p>Expedientes, documentos, vacaciones, movimientos y control por empleado.</p>
-          </article>
-          <article>
-            <i data-lucide="shopping-bag"></i>
-            <h3>Compras</h3>
-            <p>Proveedores, órdenes, autorizaciones, costos y trazabilidad de documentos.</p>
-          </article>
-          <article>
-            <i data-lucide="receipt-text"></i>
-            <h3>Ventas</h3>
-            <p>Clientes, cotizaciones, seguimiento comercial, pedidos y facturación.</p>
-          </article>
-          <article>
-            <i data-lucide="scan-barcode"></i>
-            <h3>Punto de venta</h3>
-            <p>Caja, tickets, sesiones, métodos de pago, cortes y reportes diarios.</p>
-          </article>
-          <article>
-            <i data-lucide="boxes"></i>
-            <h3>Inventario</h3>
-            <p>Productos, stock, movimientos, almacenes, alertas y control operativo.</p>
-          </article>
-          <article>
-            <i data-lucide="hard-hat"></i>
-            <h3>Obras y proyectos</h3>
-            <p>Avances, estimaciones, maquinaria, subcontratistas y bitácoras.</p>
-          </article>
-          <article>
-            <i data-lucide="calculator"></i>
-            <h3>Contabilidad</h3>
-            <p>Información financiera conectada a la operación para reducir captura manual.</p>
-          </article>
-          <article>
-            <i data-lucide="file-check-2"></i>
-            <h3>Facturación</h3>
-            <p>Clientes fiscales, documentos, seguimiento de emisión y control administrativo.</p>
-          </article>
-          <article>
-            <i data-lucide="chart-no-axes-combined"></i>
-            <h3>Reportes</h3>
-            <p>Indicadores para dirección, administración y equipos operativos.</p>
-          </article>
+        <div class="field full">
+          <label for="f-mensaje">Cuéntanos qué necesitas ordenar (opcional)</label>
+          <textarea id="f-mensaje" name="mensaje" placeholder="Ej. tenemos 3 sucursales y el inventario no coincide con lo facturado…"></textarea>
         </div>
-      </section>
-
-      <section class="industry-section" id="industrias" aria-labelledby="industries-title">
-        <div class="industry-copy">
-          <p class="eyebrow">Casos de uso por industria</p>
-          <h2 id="industries-title">HELIOS habla el idioma de tu operación.</h2>
-          <p>
-            Cada giro necesita controles distintos. Por eso el sistema se estructura
-            con módulos, permisos y reportes pensados para el día a día de cada cliente.
-          </p>
+      </div>
+      <div class="form-foot">
+        <small>Al enviar aceptas que te contactemos para coordinar la sesión de diagnóstico.</small>
+        <button type="submit" class="btn emerald">
+          Solicitar diagnóstico
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="ic-box">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
+        <strong>¡Listo! Recibimos tu solicitud.</strong>
+        <p>Te contactamos en menos de 24 horas hábiles para agendar la sesión.</p>
+      </div>
+    </form>
+  </div>
+</div>
 
-        <div class="industry-tabs" role="tablist" aria-label="Industrias">
-          <button type="button" class="is-active" data-industry="constructoras" role="tab" aria-selected="true">
-            Constructoras
-          </button>
-          <button type="button" data-industry="comercializadoras" role="tab" aria-selected="false">
-            Comercializadoras
-          </button>
-          <button type="button" data-industry="retail" role="tab" aria-selected="false">
-            Retail
-          </button>
-          <button type="button" data-industry="servicios" role="tab" aria-selected="false">
-            Servicios
-          </button>
-        </div>
+<!-- ============================================== FOOTER -->
+<footer>
+  <div class="footer">
+    <div class="footer-brand">
+      <img src="assets/helios-logo.png" alt="HELIOS" />
+      <p>ERP adaptable para PyMEs que quieren operar con claridad.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="#demo">Recorrido</a></li>
+        <li><a href="#industrias">Industrias</a></li>
+        <li><a href="#proceso">Implementación</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#direccion">Para dirección</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="pdf/HELIOS_Brochure_Comercial.pdf">Brochure PDF</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="mailto:samuelgamas75@gmail.com">samuelgamas75@gmail.com</a></li>
+        <li><a href="#contacto">Solicitar diagnóstico</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 HELIOS ERP — Todos los derechos reservados.</span>
+    <span>Hecho para PyMEs que quieren dirigir con datos.</span>
+  </div>
+</footer>
 
-        <div class="industry-stage">
-          <article class="industry-card is-active" data-industry-panel="constructoras">
-            <i data-lucide="hard-hat"></i>
-            <h3>Control por obra desde compras hasta estimaciones.</h3>
-            <p>
-              HELIOS ayuda a conectar obras, presupuestos, avances, maquinaria,
-              subcontratistas, compras por proyecto y reportes para dirección.
-            </p>
-            <ul>
-              <li>Estimaciones y avance operativo.</li>
-              <li>Compras vinculadas a obra.</li>
-              <li>Visibilidad de costos y responsables.</li>
-            </ul>
-          </article>
-          <article class="industry-card" data-industry-panel="comercializadoras">
-            <i data-lucide="warehouse"></i>
-            <h3>Inventario, ventas y compras conectadas.</h3>
-            <p>
-              Centraliza proveedores, clientes, productos, órdenes, facturación,
-              márgenes y reportes comerciales en una sola operación.
-            </p>
-            <ul>
-              <li>Stock confiable por almacén.</li>
-              <li>Seguimiento comercial y administrativo.</li>
-              <li>Reportes para compras y dirección.</li>
-            </ul>
-          </article>
-          <article class="industry-card" data-industry-panel="retail">
-            <i data-lucide="store"></i>
-            <h3>Caja, cortes y sucursales bajo control.</h3>
-            <p>
-              Diseñado para operaciones con punto de venta, tickets, sesiones de
-              caja, métodos de pago, inventario y reportes diarios.
-            </p>
-            <ul>
-              <li>Cortes de caja y trazabilidad.</li>
-              <li>Control por sucursal y usuario.</li>
-              <li>Inventario actualizado por operación.</li>
-            </ul>
-          </article>
-          <article class="industry-card" data-industry-panel="servicios">
-            <i data-lucide="briefcase-business"></i>
-            <h3>Órdenes, clientes y seguimiento sin perder contexto.</h3>
-            <p>
-              HELIOS organiza clientes, actividades, documentos, responsables,
-              cobranza y reportes de desempeño por área.
-            </p>
-            <ul>
-              <li>Órdenes y seguimiento operativo.</li>
-              <li>Documentos centralizados.</li>
-              <li>Indicadores por equipo o cliente.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+<!-- ============================================== SCRIPT -->
+<script>
+// Nav scroll state
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
-      <section class="section implementation-section" id="implementacion" aria-labelledby="implementation-title">
-        <div class="section-heading centered">
-          <p class="eyebrow">Implementación con método</p>
-          <h2 id="implementation-title">Un ERP que se construye con diagnóstico, no con suposiciones.</h2>
-          <p>
-            El proceso está pensado para avanzar por etapas, reducir fricción y
-            lograr que cada área use el sistema con claridad.
-          </p>
-        </div>
+// Demo tabs
+const demoTabs = document.querySelectorAll('.demo-tabs button');
+const demoPanels = document.querySelectorAll('.demo-panel');
+const demoSide = document.querySelectorAll('.demo-aside .step');
+const winSide = document.querySelectorAll('.win-side .side-item[data-side]');
+const bc = document.getElementById('demo-bc');
+const bcMap = { ventas: 'Ventas', inventario: 'Inventario', compras: 'Compras', reportes: 'Reportes' };
+function setDemo(key) {
+  demoTabs.forEach(b => b.classList.toggle('active', b.dataset.demo === key));
+  demoPanels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + key));
+  demoSide.forEach(s => s.classList.toggle('active', s.dataset.step === key));
+  winSide.forEach(s => s.classList.toggle('active', s.dataset.side === key));
+  if (bc) bc.textContent = bcMap[key] || key;
+}
+demoTabs.forEach(b => b.addEventListener('click', () => setDemo(b.dataset.demo)));
+demoSide.forEach(s => s.addEventListener('click', () => setDemo(s.dataset.step)));
+winSide.forEach(s => s.addEventListener('click', () => setDemo(s.dataset.side)));
 
-        <ol class="timeline">
-          <li>
-            <span>01</span>
-            <strong>Diagnóstico operativo</strong>
-            <p>Mapeo de áreas, documentos, usuarios, permisos, flujos y prioridades.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <strong>Diseño del alcance</strong>
-            <p>Definición de módulos, reportes, reglas de operación y etapas de salida.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <strong>Configuración</strong>
-            <p>Alta de catálogos, usuarios, permisos, empresas y flujos principales.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <strong>Capacitación</strong>
-            <p>Entrenamiento por rol para que cada equipo use lo que necesita.</p>
-          </li>
-          <li>
-            <span>05</span>
-            <strong>Acompañamiento</strong>
-            <p>Ajustes, mejora continua y expansión de módulos conforme crece la operación.</p>
-          </li>
-        </ol>
-      </section>
+// Industries tabs
+const indTabs = document.querySelectorAll('.industries-tabs button');
+const indPanels = document.querySelectorAll('.industries-card');
+indTabs.forEach(b => b.addEventListener('click', () => {
+  const k = b.dataset.ind;
+  indTabs.forEach(x => x.classList.toggle('active', x === b));
+  indPanels.forEach(p => p.classList.toggle('active', p.dataset.indPanel === k));
+}));
 
-      <section class="final-cta" id="contacto" aria-labelledby="cta-title">
-        <div>
-          <p class="eyebrow">Siguiente paso</p>
-          <h2 id="cta-title">Solicita un diagnóstico inicial sin costo.</h2>
-          <p>
-            Revisemos tu operación, detectemos los puntos críticos y definamos qué
-            módulos necesita HELIOS para darte control sin imponer un paquete genérico.
-          </p>
-        </div>
-        <div class="cta-actions">
-          <a
-            class="button primary dark"
-            href="mailto:samuelgamas75@gmail.com?subject=Solicito%20diagn%C3%B3stico%20inicial%20de%20HELIOS&body=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20inicial%20sin%20costo%20para%20evaluar%20c%C3%B3mo%20HELIOS%20puede%20ordenar%20la%20operaci%C3%B3n%20de%20mi%20empresa.%0A%0ANombre%3A%0AEmpresa%3A%0AGiro%3A%0ATel%C3%A9fono%3A%0A"
-          >
-            <i data-lucide="send"></i>
-            <span>Solicitar diagnóstico</span>
-          </a>
-          <a class="button secondary light" href="./pdf/HELIOS_Brochure_Comercial.pdf">
-            <i data-lucide="file-down"></i>
-            <span>Ver brochure</span>
-          </a>
-        </div>
-      </section>
-    </main>
+// Form
+const form = document.getElementById('leadForm');
+const success = document.getElementById('formSuccess');
+form?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let valid = true;
+  form.querySelectorAll('.field').forEach(f => f.classList.remove('error'));
+  const nombre = form.nombre.value.trim();
+  const empresa = form.empresa.value.trim();
+  const email = form.email.value.trim();
+  const giro = form.giro.value;
+  if (!nombre) { form.nombre.closest('.field').classList.add('error'); valid = false; }
+  if (!empresa) { form.empresa.closest('.field').classList.add('error'); valid = false; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { form.email.closest('.field').classList.add('error'); valid = false; }
+  if (!giro) { form.giro.closest('.field').classList.add('error'); valid = false; }
+  if (!valid) return;
+  success.classList.add('show');
+  form.querySelector('.form-grid').style.display = 'none';
+  form.querySelector('.form-foot').style.display = 'none';
+});
 
-    <footer class="site-footer">
-      <img src="./assets/helios-logo.png" alt="HELIOS" />
-      <span>ERP adaptable para empresas que quieren operar con claridad.</span>
-      <a href="mailto:samuelgamas75@gmail.com">samuelgamas75@gmail.com</a>
-    </footer>
+// Fade-in observer
+const fadeEls = document.querySelectorAll('.fade-in');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => io.observe(el));
+</script>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+</body>
 </html>

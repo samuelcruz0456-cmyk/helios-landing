@@ -12,13 +12,15 @@ generico.
 Este sitio es estatico. Puede publicarse directamente con GitHub Pages desde la
 rama `main`.
 
+La landing principal vive en `index.html` con CSS y JavaScript incluidos en el
+mismo archivo, por lo que no requiere build ni dependencias locales.
+
 Archivos principales:
 
 - `index.html`
-- `styles.css`
-- `script.js`
 - `assets/`
 - `pdf/`
+- `promos/`
 
 ## Contacto
 
